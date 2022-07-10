@@ -10,6 +10,7 @@ import { FlexLayoutModule } from "@angular/flex-layout";
 import { AppRoutingModule } from "./app-routing.module";
 import { PortalComponent } from './portal/portal.component';
 import { AssessmentsComponent } from './assessments/assessments.component';
+import { AuthModule } from "@auth0/auth0-angular";
 
 @NgModule({
   declarations: [
@@ -24,7 +25,11 @@ import { AssessmentsComponent } from './assessments/assessments.component';
     BrowserAnimationsModule,
     MaterialModule,
     FlexLayoutModule,
-    AppRoutingModule
+    AppRoutingModule,
+    AuthModule.forRoot({
+      domain: "dev-41tfcxyn.us.auth0.com",
+      clientId: "CsKG8IB5gjo4XJLU0nqeaNnWvu0CDiKT"
+    }),
   ],
   providers: [],
   bootstrap: [AppComponent]

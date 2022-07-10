@@ -3,25 +3,25 @@
     <mat-icon>menu</mat-icon>
   </button>
 
-  <span>روانشناسی</span>
+  <span>سایت سنجش و استعدادیابی</span>
   <span class="spacer" style="flex: 1 1 auto;"></span>
 
   <button mat-icon-button [matMenuTriggerFor]="menu">
     <mat-icon>more_vert</mat-icon>
   </button>
   <mat-menu #menu="matMenu">
-    <ng-container>
-      <button mat-menu-item>
-        <mat-icon>login</mat-icon>
-        <span>ورود</span>
-      </button>
-    </ng-container>
-    <ng-container>
-      <button mat-menu-item>
+    <ng-container *ngIf="auth.isAuthenticated$ | async; else loggedOut">
+      <button mat-menu-item (click)="auth.logout({ returnTo: document.location.origin })">
         <mat-icon>logout</mat-icon>
         <span>خروج</span>
       </button>
     </ng-container>
+    <ng-template #loggedOut>
+      <button mat-menu-item (click)="auth.loginWithRedirect()">
+        <mat-icon>login</mat-icon>
+        <span>ورود</span>
+      </button>
+    </ng-template>
   </mat-menu>
 
 </mat-toolbar>
