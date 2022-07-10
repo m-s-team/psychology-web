@@ -8,12 +8,14 @@ import { SidenavComponent } from './sidenav/sidenav.component';
 import { ToolbarComponent } from './toolbar/toolbar.component';
 import { FlexLayoutModule } from "@angular/flex-layout";
 import { AppRoutingModule } from "./app-routing.module";
+import { PortalComponent } from './portal/portal.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     SidenavComponent,
-    ToolbarComponent
+    ToolbarComponent,
+    PortalComponent
   ],
   imports: [
     BrowserModule,
