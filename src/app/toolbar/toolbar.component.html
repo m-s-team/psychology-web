@@ -1,0 +1,27 @@
+<mat-toolbar color="primary">
+  <button mat-icon-button (click)="sidenavToggle.emit()">
+    <mat-icon>menu</mat-icon>
+  </button>
+
+  <span>روانشناسی</span>
+  <span class="spacer" style="flex: 1 1 auto;"></span>
+
+  <button mat-icon-button [matMenuTriggerFor]="menu">
+    <mat-icon>more_vert</mat-icon>
+  </button>
+  <mat-menu #menu="matMenu">
+    <ng-container>
+      <button mat-menu-item>
+        <mat-icon>login</mat-icon>
+        <span>ورود</span>
+      </button>
+    </ng-container>
+    <ng-container>
+      <button mat-menu-item>
+        <mat-icon>logout</mat-icon>
+        <span>خروج</span>
+      </button>
+    </ng-container>
+  </mat-menu>
+
+</mat-toolbar>

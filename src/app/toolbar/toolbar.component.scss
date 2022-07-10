@@ -1,0 +1,15 @@
+a {
+  text-decoration: none;
+  color: white;
+}
+
+.navigation-list {
+  list-style: none;
+}
+
+mat-toolbar {
+  transition: all .5s;
+  position: sticky;
+  top: 0;
+  z-index: 1;
+}
