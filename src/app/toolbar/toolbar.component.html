@@ -1,9 +1,8 @@
 <mat-toolbar color="primary">
-  <button mat-icon-button (click)="sidenavToggle.emit()">
+  <button mat-icon-button (click)="sidenavToggle.emit()" fxHide.gt-sm>
     <mat-icon>menu</mat-icon>
   </button>
 
-  <span>سایت سنجش و استعدادیابی</span>
   <span class="spacer" style="flex: 1 1 auto;"></span>
 
   <button mat-icon-button [matMenuTriggerFor]="menu">

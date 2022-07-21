@@ -6,6 +6,11 @@ mat-sidenav-container {
   min-width: 100%;
 }
 
+main {
+  flex: 1 1 auto;
+  overflow: auto;
+}
+
 mat-sidenav {
   width: 250px;
 }

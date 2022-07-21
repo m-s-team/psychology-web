@@ -11,6 +11,7 @@ import { AppRoutingModule } from "./app-routing.module";
 import { PortalComponent } from './portal/portal.component';
 import { AssessmentsComponent } from './assessments/assessments.component';
 import { AuthModule } from "@auth0/auth0-angular";
+import { FormsModule } from "@angular/forms";
 
 @NgModule({
   declarations: [
@@ -20,17 +21,18 @@ import { AuthModule } from "@auth0/auth0-angular";
     PortalComponent,
     AssessmentsComponent
   ],
-  imports: [
-    BrowserModule,
-    BrowserAnimationsModule,
-    MaterialModule,
-    FlexLayoutModule,
-    AppRoutingModule,
-    AuthModule.forRoot({
-      domain: "dev-41tfcxyn.us.auth0.com",
-      clientId: "CsKG8IB5gjo4XJLU0nqeaNnWvu0CDiKT"
-    }),
-  ],
+    imports: [
+        BrowserModule,
+        BrowserAnimationsModule,
+        MaterialModule,
+        FlexLayoutModule,
+        AppRoutingModule,
+        AuthModule.forRoot({
+            domain: "dev-41tfcxyn.us.auth0.com",
+            clientId: "CsKG8IB5gjo4XJLU0nqeaNnWvu0CDiKT"
+        }),
+        FormsModule,
+    ],
   providers: [],
   bootstrap: [AppComponent]
 })

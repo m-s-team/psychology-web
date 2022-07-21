@@ -1,8 +1,11 @@
-<mat-sidenav-container dir="rtl">
-  <mat-sidenav #sidenav role="navigation">
+<mat-sidenav-container dir="rtl" [hasBackdrop]="!mediaObserver.isActive('gt-sm')">
+  <mat-sidenav #sidenav
+               role="navigation"
+               [mode]="mediaObserver.isActive('gt-sm') ? 'side' : 'over'"
+               [opened]="mediaObserver.isActive('gt-sm')">
     <app-sidenav></app-sidenav>
   </mat-sidenav>
-  <mat-sidenav-content>
+  <mat-sidenav-content fxLayout="column">
     <app-toolbar (sidenavToggle)="sidenav.toggle()"></app-toolbar>
     <main>
       <router-outlet></router-outlet>
