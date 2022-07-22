@@ -1,0 +1,29 @@
+<div id="assessments">
+  <mat-accordion multi>
+    <mat-expansion-panel expanded *ngFor="let assessmentType of assessmentTypes">
+      <mat-expansion-panel-header>
+        <mat-panel-title>
+          {{ assessmentType.title }}
+        </mat-panel-title>
+      </mat-expansion-panel-header>
+      <div fxLayout="column" fxLayout.gt-xs="row wrap">
+        <mat-card *ngFor="let assessment of assessmentType.assessments" fxLayout="column">
+          <mat-card-title>{{ assessment.title }}</mat-card-title>
+          <mat-card-subtitle>{{ assessment.subtitle }}</mat-card-subtitle>
+          <mat-card-content>
+            <p>
+              زمان آزمون: <b>{{ assessment.time }} دقیقه</b><br>
+              تعداد سوالات: <b>{{ assessment.count }}</b><br>
+              گروه سنی: <b>+{{ assessment.age }}</b>
+            </p>
+          </mat-card-content>
+          <mat-divider inset></mat-divider>
+          <mat-card-actions align="end">
+            <button mat-button disabled="true">نتایج</button>
+            <button mat-button [disabled]="!assessment.enabled">شروع</button>
+          </mat-card-actions>
+        </mat-card>
+      </div>
+    </mat-expansion-panel>
+  </mat-accordion>
+</div>

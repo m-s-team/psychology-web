@@ -11,6 +11,7 @@ import { MatRadioModule } from '@angular/material/radio';
 import { MatSelectModule } from '@angular/material/select';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatMenuModule } from "@angular/material/menu";
+import { MatExpansionModule } from "@angular/material/expansion";
 
 @NgModule({
   declarations: [],
@@ -26,7 +27,8 @@ import { MatMenuModule } from "@angular/material/menu";
     MatSelectModule,
     MatFormFieldModule,
     MatTabsModule,
-    MatMenuModule
+    MatMenuModule,
+    MatExpansionModule
   ],
   exports: [
     MatButtonModule,
@@ -40,7 +42,8 @@ import { MatMenuModule } from "@angular/material/menu";
     MatSelectModule,
     MatFormFieldModule,
     MatTabsModule,
-    MatMenuModule
+    MatMenuModule,
+    MatExpansionModule
   ]
 })
 export class MaterialModule {

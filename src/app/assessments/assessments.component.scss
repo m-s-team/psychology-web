@@ -1,0 +1,22 @@
+#assessments {
+  margin: 10px;
+}
+
+mat-expansion-panel {
+  background-color: #505050;
+}
+
+.mat-card {
+  margin: 4px;
+  flex: 1 1 250px;
+}
+
+mat-card-subtitle {
+  flex: 1 1 auto;
+}
+
+@media screen and (max-width: 599px) {
+  .mat-card {
+    flex: 1 1 100%;
+  }
+}
