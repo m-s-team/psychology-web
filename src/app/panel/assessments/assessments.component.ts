@@ -59,10 +59,24 @@ export class AssessmentsComponent implements OnInit {
         {
           title: "WAIS-IV",
           subtitle: "تست هوش وکسلر بزرگسالان نسخه چهارم",
-          time: 20,
+          time: 80,
           count: 80,
           age: 16,
           enabled: true
+        },{
+          title: "WISC-V",
+          subtitle: "تست هوش وکسلر کودکان نسخه پنجم",
+          time: 80,
+          count: 80,
+          age: 6,
+          enabled: false
+        },{
+          title: "WPPSI",
+          subtitle: "تست هوش وکسلر پیش دبستانی",
+          time: 80,
+          count: 80,
+          age: 3,
+          enabled: false
         },
         {
           title: "Gardner",

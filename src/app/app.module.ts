@@ -4,14 +4,18 @@ import { BrowserModule } from '@angular/platform-browser';
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MaterialModule } from "./shared/material.module";
-import { SidenavComponent } from './sidenav/sidenav.component';
-import { ToolbarComponent } from './toolbar/toolbar.component';
+import { SidenavComponent } from './panel/sidenav/sidenav.component';
+import { ToolbarComponent } from './panel/toolbar/toolbar.component';
 import { FlexLayoutModule } from "@angular/flex-layout";
 import { AppRoutingModule } from "./app-routing.module";
-import { PortalComponent } from './portal/portal.component';
-import { AssessmentsComponent } from './assessments/assessments.component';
+import { PortalComponent } from './panel/portal/portal.component';
+import { AssessmentsComponent } from './panel/assessments/assessments.component';
 import { AuthModule } from "@auth0/auth0-angular";
 import { FormsModule } from "@angular/forms";
+import { WaisIvComponent } from './md/wais-iv/wais-iv.component';
+import { PanelComponent } from './panel/panel.component';
+import { MdComponent } from './md/md.component';
+import { STEPPER_GLOBAL_OPTIONS } from "@angular/cdk/stepper";
 
 @NgModule({
   declarations: [
@@ -19,21 +23,30 @@ import { FormsModule } from "@angular/forms";
     SidenavComponent,
     ToolbarComponent,
     PortalComponent,
-    AssessmentsComponent
+    AssessmentsComponent,
+    WaisIvComponent,
+    PanelComponent,
+    MdComponent
   ],
-    imports: [
-        BrowserModule,
-        BrowserAnimationsModule,
-        MaterialModule,
-        FlexLayoutModule,
-        AppRoutingModule,
-        AuthModule.forRoot({
-            domain: "dev-41tfcxyn.us.auth0.com",
-            clientId: "CsKG8IB5gjo4XJLU0nqeaNnWvu0CDiKT"
-        }),
-        FormsModule,
-    ],
-  providers: [],
+  imports: [
+    BrowserModule,
+    BrowserAnimationsModule,
+    MaterialModule,
+    FlexLayoutModule,
+    AppRoutingModule,
+    AuthModule.forRoot({
+      domain: "dev-41tfcxyn.us.auth0.com",
+      clientId: "CsKG8IB5gjo4XJLU0nqeaNnWvu0CDiKT"
+    }),
+    FormsModule,
+  ],
+  providers: [
+    {
+      provide: STEPPER_GLOBAL_OPTIONS,
+      useValue: {displayDefaultIndicatorType: false}
+    }
+  ],
   bootstrap: [AppComponent]
 })
-export class AppModule { }
+export class AppModule {
+}

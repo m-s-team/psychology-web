@@ -1,0 +1,14 @@
+<mat-sidenav-container [hasBackdrop]="!mediaObserver.isActive('gt-sm')">
+  <mat-sidenav #sidenav
+               role="navigation"
+               [mode]="mediaObserver.isActive('gt-sm') ? 'side' : 'over'"
+               [opened]="mediaObserver.isActive('gt-sm')">
+    <app-sidenav></app-sidenav>
+  </mat-sidenav>
+  <mat-sidenav-content fxLayout="column">
+    <app-toolbar (sidenavToggle)="sidenav.toggle()"></app-toolbar>
+    <main>
+      <router-outlet></router-outlet>
+    </main>
+  </mat-sidenav-content>
+</mat-sidenav-container>

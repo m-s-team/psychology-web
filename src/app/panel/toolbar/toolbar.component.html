@@ -3,7 +3,7 @@
     <mat-icon>menu</mat-icon>
   </button>
 
-  <span class="spacer" style="flex: 1 1 auto;"></span>
+  <span class="spacer"></span>
 
   <button mat-icon-button [matMenuTriggerFor]="menu">
     <mat-icon>more_vert</mat-icon>
@@ -16,7 +16,7 @@
       </button>
     </ng-container>
     <ng-template #loggedOut>
-      <button mat-menu-item (click)="auth.loginWithRedirect()">
+      <button mat-menu-item (click)="auth.loginWithPopup()">
         <mat-icon>login</mat-icon>
         <span>ورود</span>
       </button>

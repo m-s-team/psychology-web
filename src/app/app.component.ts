@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { MediaObserver } from "@angular/flex-layout";
+
 
 @Component({
   selector: 'app-root',
@@ -8,6 +8,6 @@ import { MediaObserver } from "@angular/flex-layout";
 })
 export class AppComponent {
   title = 'روانشناسی';
-  constructor(public mediaObserver: MediaObserver) {
+  constructor() {
   }
 }

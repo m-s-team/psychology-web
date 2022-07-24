@@ -19,8 +19,12 @@
           </mat-card-content>
           <mat-divider inset></mat-divider>
           <mat-card-actions align="end">
-            <button mat-button disabled="true">نتایج</button>
-            <button mat-button [disabled]="!assessment.enabled">شروع</button>
+            <button mat-button disabled>تفسیر</button>
+            <button mat-button
+                    [routerLink]="'/md/' + assessment.title"
+                    [disabled]="!assessment.enabled">
+              شروع
+            </button>
           </mat-card-actions>
         </mat-card>
       </div>
