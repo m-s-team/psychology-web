@@ -16,6 +16,7 @@ import { WaisIvComponent } from './md/wais-iv/wais-iv.component';
 import { PanelComponent } from './panel/panel.component';
 import { MdComponent } from './md/md.component';
 import { STEPPER_GLOBAL_OPTIONS } from "@angular/cdk/stepper";
+import { NgxEchartsModule } from "ngx-echarts";
 
 @NgModule({
   declarations: [
@@ -39,6 +40,9 @@ import { STEPPER_GLOBAL_OPTIONS } from "@angular/cdk/stepper";
       clientId: "CsKG8IB5gjo4XJLU0nqeaNnWvu0CDiKT"
     }),
     FormsModule,
+    NgxEchartsModule.forRoot({
+      echarts: () => import('echarts')
+    })
   ],
   providers: [
     {
