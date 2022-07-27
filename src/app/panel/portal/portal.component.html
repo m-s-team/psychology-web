@@ -1,14 +1,36 @@
 <div id="portal" fxLayout="column"
      fxLayout.gt-xs="row">
-  <div fxFlex.gt-xs="30%" fxLayout="column">
-    <div fxFlex="50%" class="portal-item">
-      مشخصات هویتی
+  <div fxFlex.gt-xs="37%" fxLayout="column">
+    <div id="about" fxFlex.gt-xs="50%" class="portal-item" fxLayout="column">
+      <ul>
+        <li>
+          <mat-icon fontIcon="chevron_left"></mat-icon>
+          <strong>تاریخ تولد:</strong> <span>16 اردیبهشت 1372</span></li>
+        <li>
+          <mat-icon fontIcon="chevron_left"></mat-icon>
+          <strong>سن:</strong> <span>29</span></li>
+        <li>
+          <mat-icon fontIcon="chevron_left"></mat-icon>
+          <strong>تلفن:</strong> <span dir="ltr">+98 910 360 7491</span></li>
+        <li>
+          <mat-icon fontIcon="chevron_left"></mat-icon>
+          <strong>وضعیت تأهل:</strong> <span>مجرد</span></li>
+        <li>
+          <mat-icon fontIcon="chevron_left"></mat-icon>
+          <strong>تحصیلات:</strong> <span>دیپلم</span></li>
+        <li>
+          <mat-icon fontIcon="chevron_left"></mat-icon>
+          <strong>محل سکونت:</strong> <span>اصفهان</span></li>
+      </ul>
+      <button mat-icon-button fxFlexAlign="end">
+        <mat-icon>edit</mat-icon>
+      </button>
     </div>
-    <div fxFlex="50%" class="portal-item">
+    <div fxFlex.gt-xs="50%" class="portal-item">
       پرداخت
     </div>
   </div>
-  <div id="personality" class="portal-item" fxFlex.gt-xs="70%">
+  <div id="personality" class="portal-item" fxFlex.gt-xs="63%">
     <div class="chart" echarts [options]="option" theme="dark"></div>
   </div>
 </div>

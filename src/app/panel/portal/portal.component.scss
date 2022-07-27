@@ -1,16 +1,57 @@
+@use '@angular/material' as mat;
+
 #portal {
   height: 100%;
+  padding: 3px;
 }
 
 .portal-item {
   border: 1px solid #404040;
-  margin: 2px;
+  margin: 3px;
   border-radius: 5px;
   padding: 10px;
 }
 
 .spacer {
   flex: 1 1 auto;
+}
+
+#about {
+  overflow: auto;
+}
+
+ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  flex: 1 1 auto;
+}
+
+ul li {
+  border: 1px solid #404040;
+  background-color: #353535;
+  margin: 6px;
+  padding: 10px;
+  display: flex;
+  border-radius: 5px;
+  align-items: center;
+  @include mat.elevation(2, #000000, 0.8);
+  transition: all .5s;
+}
+
+ul li:hover {
+  border-color: #7b1fa2;
+  @include mat.elevation(6, #7b1fa2);
+  background-color: #404040;
+}
+
+ul strong {
+  margin-left: 10px;
+}
+
+ul mat-icon {
+  margin-left: 5px;
+  font-size: 33px;
 }
 
 .chart {
