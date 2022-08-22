@@ -1,0 +1,46 @@
+.fill {
+  height: 100%;
+}
+
+.body{
+  overflow: auto;
+}
+
+img {
+  padding: 5px 0;
+}
+
+.test {
+  max-width: 600px;
+  border: 1px solid #454545;
+  margin: 15px;
+  border-radius: 10px;
+  background-color: #404040;
+}
+
+.question {
+  span {
+  }
+
+  img {
+    margin-top: 10px;
+    filter: invert(1);
+    width: 100%;
+    max-width: 537px;
+  }
+
+  border-radius: 10px;
+  background-color: #212121;
+  padding: 20px 10px;
+}
+
+mat-button-toggle-group {
+  margin: 18px 4px;
+}
+
+mat-button-toggle {
+  img {
+    filter: invert(1);
+    width: 100%;
+  }
+}

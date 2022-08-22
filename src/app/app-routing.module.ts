@@ -5,6 +5,8 @@ import { AssessmentsComponent } from "./panel/assessments/assessments.component"
 import { WaisIvComponent } from "./md/wais-iv/wais-iv.component";
 import { PanelComponent } from "./panel/panel.component";
 import { MdComponent } from "./md/md.component";
+import { BarrettComponent } from "./md/barrett/barrett.component";
+import { VisualReasoningComponent } from "./md/barrett/visual-reasoning/visual-reasoning.component";
 
 const routes: Routes = [
   {path: 'panel', component: PanelComponent, children: [
@@ -13,7 +15,9 @@ const routes: Routes = [
     ]
   },
   {path: 'md', component: MdComponent, children: [
-      {path: 'WAIS-IV', component: WaisIvComponent}
+      {path: 'waisiv', component: WaisIvComponent},
+      {path: 'barrett', component: BarrettComponent},
+      {path: 'visual-reasoning', component: VisualReasoningComponent}
     ]
   },
   {path: '', redirectTo: '/panel/portal', pathMatch: 'full'},

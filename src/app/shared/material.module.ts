@@ -13,6 +13,9 @@ import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatMenuModule } from "@angular/material/menu";
 import { MatExpansionModule } from "@angular/material/expansion";
 import { MatStepperModule } from "@angular/material/stepper";
+import { MatTableModule } from "@angular/material/table";
+import { MatButtonToggleModule } from "@angular/material/button-toggle";
+import { MatBadgeModule } from "@angular/material/badge";
 
 @NgModule({
   declarations: [],
@@ -30,7 +33,10 @@ import { MatStepperModule } from "@angular/material/stepper";
     MatTabsModule,
     MatMenuModule,
     MatExpansionModule,
-    MatStepperModule
+    MatStepperModule,
+    MatTableModule,
+    MatButtonToggleModule,
+    MatBadgeModule
   ],
   exports: [
     MatButtonModule,
@@ -46,7 +52,10 @@ import { MatStepperModule } from "@angular/material/stepper";
     MatTabsModule,
     MatMenuModule,
     MatExpansionModule,
-    MatStepperModule
+    MatStepperModule,
+    MatTableModule,
+    MatButtonToggleModule,
+    MatBadgeModule
   ]
 })
 export class MaterialModule {

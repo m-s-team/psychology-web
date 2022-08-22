@@ -13,6 +13,7 @@ export class AssessmentsComponent implements OnInit {
       assessments: [
         {
           title: "MMPI",
+          route: "",
           subtitle: "تست شخصیت شناسی چندوجهی مینه‌سوتا (فرم بلند)",
           time: 60,
           count: 556,
@@ -21,6 +22,7 @@ export class AssessmentsComponent implements OnInit {
         },
         {
           title: "MMPI 2",
+          route: "",
           subtitle: "تست شخصیت شناسی چندوجهی مینه‌سوتا (فرم کوتاه)",
           time: 60,
           count: 71,
@@ -29,6 +31,7 @@ export class AssessmentsComponent implements OnInit {
         },
         {
           title: "NEO-PIR",
+          route: "",
           subtitle: "بررسی 5 فاکتور بزرگ شخصیت شامل برون گرایی، عصبانیت، وظیفه شناسی، گشودگی و توافق پذیری",
           time: 40,
           count: 240,
@@ -37,6 +40,7 @@ export class AssessmentsComponent implements OnInit {
         },
         {
           title: "NEO-FFI",
+          route: "",
           subtitle: "بررسی 5 فاکتور بزرگ شخصیت شامل برون گرایی، عصبانیت، وظیفه شناسی، گشودگی و توافق پذیری",
           time: 15,
           count: 60,
@@ -45,6 +49,7 @@ export class AssessmentsComponent implements OnInit {
         },
         {
           title: "MBTI",
+          route: "",
           subtitle: "آزمون شخصیت‌شناسی مایرز-بریگز",
           time: 15,
           count: 60,
@@ -58,6 +63,7 @@ export class AssessmentsComponent implements OnInit {
       assessments: [
         {
           title: "WAIS-IV",
+          route: "waisiv",
           subtitle: "تست هوش وکسلر بزرگسالان نسخه چهارم",
           time: 80,
           count: 80,
@@ -65,6 +71,7 @@ export class AssessmentsComponent implements OnInit {
           enabled: true
         },{
           title: "WISC-V",
+          route: "",
           subtitle: "تست هوش وکسلر کودکان نسخه پنجم",
           time: 80,
           count: 80,
@@ -72,6 +79,7 @@ export class AssessmentsComponent implements OnInit {
           enabled: false
         },{
           title: "WPPSI",
+          route: "",
           subtitle: "تست هوش وکسلر پیش دبستانی",
           time: 80,
           count: 80,
@@ -80,6 +88,7 @@ export class AssessmentsComponent implements OnInit {
         },
         {
           title: "Gardner",
+          route: "",
           subtitle: "تست هوش چندگانه گاردنر",
           time: 20,
           count: 80,
@@ -87,12 +96,13 @@ export class AssessmentsComponent implements OnInit {
           enabled: false
         },
         {
-          title: "Bar-On",
-          subtitle: "تست هوش هیجانی EQ بار-آن",
-          time: 25,
-          count: 90,
-          age: 16,
-          enabled: false
+          title: "James Barrett",
+          route: "barrett",
+          subtitle: "تست استعداد جیمز برت",
+          time: 120,
+          count: 105,
+          age: 9,
+          enabled: true
         },
       ]
     }
@@ -108,6 +118,7 @@ export class AssessmentsComponent implements OnInit {
 
 interface Assessment {
   title: string;
+  route: string;
   subtitle: string;
   time: number;
   count: number;

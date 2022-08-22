@@ -1,0 +1,30 @@
+.fill {
+  height: 100%;
+}
+
+.toolbar {
+  border: 1px solid #404040;
+  margin: 5px;
+  border-radius: 5px;
+}
+
+.toolbar button {
+  margin: 2px;
+}
+
+mat-form-field {
+  flex: 1 1 auto;
+  margin: 2px;
+  min-width: 100px;
+}
+
+.body {
+  overflow: auto;
+}
+
+div .body button {
+  margin: 10px;
+  padding: 20px;
+  height: 120px;
+  width: 210px;
+}
