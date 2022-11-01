@@ -3,7 +3,7 @@
                role="navigation"
                [mode]="mediaObserver.isActive('gt-sm') ? 'side' : 'over'"
                [opened]="mediaObserver.isActive('gt-sm')">
-    <app-sidenav></app-sidenav>
+    <app-sidenav fxLayout="column"></app-sidenav>
   </mat-sidenav>
   <mat-sidenav-content fxLayout="column">
     <app-toolbar (sidenavToggle)="sidenav.toggle()"></app-toolbar>
