@@ -16,6 +16,7 @@ import { MatStepperModule } from "@angular/material/stepper";
 import { MatTableModule } from "@angular/material/table";
 import { MatButtonToggleModule } from "@angular/material/button-toggle";
 import { MatBadgeModule } from "@angular/material/badge";
+import { MatDividerModule } from "@angular/material/divider";
 
 @NgModule({
   declarations: [],
@@ -36,7 +37,8 @@ import { MatBadgeModule } from "@angular/material/badge";
     MatStepperModule,
     MatTableModule,
     MatButtonToggleModule,
-    MatBadgeModule
+    MatBadgeModule,
+    MatDividerModule
   ],
   exports: [
     MatButtonModule,
@@ -55,7 +57,8 @@ import { MatBadgeModule } from "@angular/material/badge";
     MatStepperModule,
     MatTableModule,
     MatButtonToggleModule,
-    MatBadgeModule
+    MatBadgeModule,
+    MatDividerModule
   ]
 })
 export class MaterialModule {
