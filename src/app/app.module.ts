@@ -27,6 +27,7 @@ import { NeoComponent } from './panel/assessments/neo/neo.component';
 import { MbtiComponent } from './panel/assessments/mbti/mbti.component';
 import { StrongComponent } from './panel/assessments/strong/strong.component';
 import { StoreModule } from '@ngrx/store';
+import { reducer } from "./state/app.reducer";
 
 @NgModule({
   declarations: [
@@ -83,7 +84,7 @@ import { StoreModule } from '@ngrx/store';
       echarts: () => import('echarts')
     }),
     HttpClientModule,
-    StoreModule.forRoot({}, {})
+    StoreModule.forRoot({app: reducer}, {})
   ],
   providers: [
     {
