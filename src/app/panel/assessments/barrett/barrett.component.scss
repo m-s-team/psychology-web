@@ -1,4 +1,38 @@
-p {
-  text-align: center;
-  color: #555555;
+.fill {
+  height: 100%;
+}
+
+.toolbar {
+  margin: 5px 20px;
+  padding: 0 10px;
+  border-radius: 5px;
+}
+
+.toolbar button {
+  margin: 2px;
+}
+
+mat-form-field {
+  flex: 1 1 auto;
+  margin: 2px;
+  min-width: 100px;
+}
+
+.test-group {
+  margin: 10px;
+  overflow: auto;
+  padding: 20px;
+}
+
+div .test-group button {
+  margin: 10px;
+  padding: 20px;
+  height: 120px;
+  width: 100%;
+}
+
+@media screen and (min-width: 600px) {
+  div .test-group button {
+    width: 210px;
+  }
 }

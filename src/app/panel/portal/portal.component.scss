@@ -29,7 +29,7 @@ ul {
 
 ul li {
   border: 1px solid #404040;
-  background-color: #353535;
+  //background-color: #353535;
   margin: 6px;
   padding: 10px;
   display: flex;
@@ -42,7 +42,7 @@ ul li {
 ul li:hover {
   border-color: #7b1fa2;
   @include mat.elevation(6, #7b1fa2);
-  background-color: #404040;
+  //background-color: #404040;
 }
 
 ul strong {

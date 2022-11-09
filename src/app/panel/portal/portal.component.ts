@@ -9,7 +9,7 @@ import { EChartsOption, graphic } from "echarts";
 export class PortalComponent implements OnInit {
 
   option: EChartsOption = {
-    backgroundColor: '#303030',
+    // backgroundColor: '#303030',
     title: {
       text: 'مشخصات شخصیتی',
       show: false
@@ -27,14 +27,14 @@ export class PortalComponent implements OnInit {
       ],
       splitNumber: 4,
       axisName: {
-        color: '#fff',
-        backgroundColor: '#666',
+        color: '#777',
+        backgroundColor: '#eee',
         borderRadius: 3,
         padding: [3, 5]
       },
       splitArea: {
         areaStyle: {
-          color: ['#353535', '#404040', '#454545']
+          // color: ['#353535', '#404040', '#454545']
         }
       },
       axisLine: {
