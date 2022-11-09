@@ -26,6 +26,7 @@ import { MmpiComponent } from './panel/assessments/mmpi/mmpi.component';
 import { NeoComponent } from './panel/assessments/neo/neo.component';
 import { MbtiComponent } from './panel/assessments/mbti/mbti.component';
 import { StrongComponent } from './panel/assessments/strong/strong.component';
+import { StoreModule } from '@ngrx/store';
 
 @NgModule({
   declarations: [
@@ -81,7 +82,8 @@ import { StrongComponent } from './panel/assessments/strong/strong.component';
     NgxEchartsModule.forRoot({
       echarts: () => import('echarts')
     }),
-    HttpClientModule
+    HttpClientModule,
+    StoreModule.forRoot({}, {})
   ],
   providers: [
     {
