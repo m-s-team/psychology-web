@@ -24,6 +24,7 @@
     "@auth0/auth0-angular": "^1.10.0",
     "@capacitor/app": "^1.1.1",
     "@capacitor/browser": "^1.0.7",
+    "@ngrx/effects": "^14.3.2",
     "@ngrx/store": "^14.3.2",
     "echarts": "^5.3.3",
     "ngx-echarts": "^14.0.0",

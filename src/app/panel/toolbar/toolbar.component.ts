@@ -1,6 +1,9 @@
 import { Component, EventEmitter, Inject, OnInit, Output } from '@angular/core';
 import { AuthService } from "@auth0/auth0-angular";
 import { DOCUMENT } from "@angular/common";
+import { Store } from "@ngrx/store";
+import { AppState } from "../../state/app.state";
+import { login } from "../../state/app.action";
 
 @Component({
   selector: 'app-toolbar',
@@ -9,12 +12,18 @@ import { DOCUMENT } from "@angular/common";
 })
 export class ToolbarComponent implements OnInit {
 
-  constructor(@Inject(DOCUMENT) public document: Document, public auth: AuthService) { }
+  constructor(
+    @Inject(DOCUMENT) public document: Document,
+    private store: Store<{app: AppState}>,
+    public auth: AuthService) { }
 
   @Output() sidenavToggle = new EventEmitter<void>();
 
   ngOnInit(): void {
   }
 
+  onLogin() {
+    this.store.dispatch(login());
+  }
 }
 

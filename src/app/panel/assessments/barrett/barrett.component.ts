@@ -1,6 +1,9 @@
 import { Component, OnInit } from '@angular/core';
-import { BarrettTestService } from "../../../services/barrett/barrett-test.service";
 import { BarrettTest } from "../../../entities/barrett/barrett-test.model";
+import { Store } from "@ngrx/store";
+import { AppState } from "../../../state/app.state";
+import { Observable } from "rxjs";
+import { selectBarrettTests, selectSelectedBarrettTest } from "../../../state/app.selector";
 
 @Component({
   selector: 'app-barrett',
@@ -9,17 +12,14 @@ import { BarrettTest } from "../../../entities/barrett/barrett-test.model";
 })
 export class BarrettComponent implements OnInit {
 
-  constructor(public barretTestService: BarrettTestService) {
-  }
+  tests$: Observable<BarrettTest[]>;
+  selectedTest$:  Observable<number>;
 
-  tests?: BarrettTest[];
-  selectedTest = 0;
+  constructor(private store: Store<{app: AppState}>) {
+    this.tests$ = store.select(selectBarrettTests);
+    this.selectedTest$ = store.select(selectSelectedBarrettTest);
+  }
 
   ngOnInit(): void {
   }
-
-  findTestById(id: Number): BarrettTest {
-    return this.tests?.find(test => test.id === id) as BarrettTest;
-  }
-
 }

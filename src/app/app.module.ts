@@ -28,6 +28,8 @@ import { MbtiComponent } from './panel/assessments/mbti/mbti.component';
 import { StrongComponent } from './panel/assessments/strong/strong.component';
 import { StoreModule } from '@ngrx/store';
 import { reducer } from "./state/app.reducer";
+import { EffectsModule } from '@ngrx/effects';
+import { AuthEffect } from "./state/auth.effects";
 
 @NgModule({
   declarations: [
@@ -77,14 +79,14 @@ import { reducer } from "./state/app.reducer";
           }
         ]
       }
-
     }),
     FormsModule,
     NgxEchartsModule.forRoot({
       echarts: () => import('echarts')
     }),
     HttpClientModule,
-    StoreModule.forRoot({app: reducer}, {})
+    StoreModule.forRoot({app: reducer}, {}),
+    EffectsModule.forRoot([AuthEffect])
   ],
   providers: [
     {
