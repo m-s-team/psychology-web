@@ -30,6 +30,7 @@ import { StoreModule } from '@ngrx/store';
 import { reducer } from "./state/app.reducer";
 import { EffectsModule } from '@ngrx/effects';
 import { AuthEffect } from "./state/auth.effects";
+import { environment } from "../environments/environment";
 
 @NgModule({
   declarations: [
@@ -57,10 +58,11 @@ import { AuthEffect } from "./state/auth.effects";
     FlexLayoutModule,
     AppRoutingModule,
     AuthModule.forRoot({
-      domain: "dev-41tfcxyn.us.auth0.com",
-      clientId: "CsKG8IB5gjo4XJLU0nqeaNnWvu0CDiKT",
-      audience: "https://api.psychology.ml/",
-      scope: "openid profile email",
+      domain: environment.auth.domain,
+      clientId: environment.auth.clientID,
+      redirectUri: environment.auth.redirect,
+      audience: environment.auth.audience,
+      scope: environment.auth.scope,
       httpInterceptor: {
         allowedList: [
           {
