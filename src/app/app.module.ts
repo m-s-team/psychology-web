@@ -31,6 +31,7 @@ import { reducer } from "./state/app.reducer";
 import { EffectsModule } from '@ngrx/effects';
 import { AuthEffect } from "./state/auth.effects";
 import { environment } from "../environments/environment";
+import { CallbackComponent } from './callback/callback.component';
 
 @NgModule({
   declarations: [
@@ -49,7 +50,8 @@ import { environment } from "../environments/environment";
     MmpiComponent,
     NeoComponent,
     MbtiComponent,
-    StrongComponent
+    StrongComponent,
+    CallbackComponent
   ],
   imports: [
     BrowserModule,

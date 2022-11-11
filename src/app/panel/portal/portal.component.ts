@@ -64,11 +64,11 @@ export class PortalComponent implements OnInit {
             areaStyle: {
               color: new graphic.RadialGradient(0.1, 0.6, 1, [
                 {
-                  color: 'rgba(0, 145, 0, 0.1)',
+                  color: 'rgba(81,219,245,0.1)',
                   offset: 0
                 },
                 {
-                  color: 'rgba(0, 145, 0, 0.9)',
+                  color: 'rgba(141,174,255,0.3)',
                   offset: 1
                 }
               ])

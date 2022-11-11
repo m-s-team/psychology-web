@@ -13,6 +13,7 @@ import { MmpiComponent } from "./panel/assessments/mmpi/mmpi.component";
 import { NeoComponent } from "./panel/assessments/neo/neo.component";
 import { StrongComponent } from "./panel/assessments/strong/strong.component";
 import { MbtiComponent } from "./panel/assessments/mbti/mbti.component";
+import { CallbackComponent } from "./callback/callback.component";
 
 const routes: Routes = [
   {
@@ -34,6 +35,7 @@ const routes: Routes = [
       {path: 'visual-reasoning', component: VisualReasoningComponent}
     ]
   },
+  {path: 'callback', component: CallbackComponent},
   {path: '', redirectTo: '/panel/portal', pathMatch: 'full'},
   {path: '**', redirectTo: '/panel/portal', pathMatch: 'full'}
 ];
