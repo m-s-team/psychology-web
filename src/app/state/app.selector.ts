@@ -1,7 +1,7 @@
 import { AppState } from "./app.state";
 import { createSelector } from "@ngrx/store";
 
-export const selectAppState = (state: { app: AppState; }) => state.app;
+export const selectAppState = (state: AppState) => state;
 
 export const selectBarrettTest = createSelector(
   selectAppState,

@@ -33,6 +33,7 @@ import { AuthEffect } from "./state/effects/auth.effects";
 import { environment } from "../environments/environment";
 import { CallbackComponent } from './callback/callback.component';
 import { StoreDevtoolsModule } from '@ngrx/store-devtools';
+import { BarrettEffect } from "./state/effects/barrett.effects";
 
 @NgModule({
   declarations: [
@@ -91,7 +92,7 @@ import { StoreDevtoolsModule } from '@ngrx/store-devtools';
     }),
     HttpClientModule,
     StoreModule.forRoot(reducers),
-    EffectsModule.forRoot([AuthEffect]),
+    EffectsModule.forRoot([AuthEffect, BarrettEffect]),
     StoreDevtoolsModule.instrument({
       name: 'Psychology',
       maxAge: 30,

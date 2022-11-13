@@ -1,10 +1,13 @@
-import { createAction } from "@ngrx/store";
+import { createAction, props } from "@ngrx/store";
+import { BarrettTest } from "../entities/barrett/barrett-test.model";
 
 export enum AppActionTypes {
   Login = '[Auth] Login',
   LoginComplete = '[Auth] LoginComplete',
   LoginSuccess = '[Auth] LoginSuccess',
   LoginFailure = '[Auth] LoginFailure',
+  LoadBarrettTests = '[BarrettTest] LoadBarrettTests',
+  SetBarrettTests = '[BarrettTest] SetBarrettTests',
 }
 
 export const login = createAction(
@@ -21,4 +24,13 @@ export const loginSuccess = createAction(
 
 export const loginFailure = createAction(
   AppActionTypes.LoginFailure
+);
+
+export const loadBarrettTests = createAction(
+  AppActionTypes.LoadBarrettTests
+);
+
+export const setBarrettTests = createAction(
+  AppActionTypes.SetBarrettTests,
+  props<{tests: BarrettTest[]}>()
 );

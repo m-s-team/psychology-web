@@ -15,7 +15,7 @@ export class BarrettComponent implements OnInit {
   tests$: Observable<BarrettTest[]>;
   selectedTest$:  Observable<number>;
 
-  constructor(private store: Store<{app: AppState}>) {
+  constructor(private store: Store<AppState>) {
     this.tests$ = store.select(selectBarrettTests);
     this.selectedTest$ = store.select(selectSelectedBarrettTest);
   }

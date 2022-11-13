@@ -1,6 +1,6 @@
 import { ActionReducerMap, createReducer, on } from "@ngrx/store";
 import { AppState } from "./app.state";
-import { loginSuccess } from "./app.action";
+import { loginSuccess, setBarrettTests } from "./app.action";
 
 const initialState: AppState = {
   auth: {
@@ -18,6 +18,7 @@ export const reducers:ActionReducerMap<AppState> = {
     on(loginSuccess, (state) => ({...state, isLoggedIn: true})),
   ),
   barrettTest: createReducer(
-    initialState.barrettTest
+    initialState.barrettTest,
+    on(setBarrettTests, (state, {tests}) => ({...state, tests: tests}))
   )
 }
