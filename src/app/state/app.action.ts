@@ -6,6 +6,7 @@ export enum AppActionTypes {
   LoginComplete = '[Auth] LoginComplete',
   LoginSuccess = '[Auth] LoginSuccess',
   LoginFailure = '[Auth] LoginFailure',
+  CheckLogin = '[Auth] CheckLogin',
   LoadBarrettTests = '[BarrettTest] LoadBarrettTests',
   SetBarrettTests = '[BarrettTest] SetBarrettTests',
 }
@@ -24,6 +25,10 @@ export const loginSuccess = createAction(
 
 export const loginFailure = createAction(
   AppActionTypes.LoginFailure
+);
+
+export const checkLogin = createAction(
+  AppActionTypes.CheckLogin
 );
 
 export const loadBarrettTests = createAction(

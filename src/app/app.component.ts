@@ -1,4 +1,7 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+import { Store } from "@ngrx/store";
+import { AppState } from "./state/app.state";
+import { checkLogin } from "./state/app.action";
 
 
 @Component({
@@ -6,8 +9,12 @@ import { Component } from '@angular/core';
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss']
 })
-export class AppComponent {
+export class AppComponent implements OnInit {
   title = 'روانشناسی';
-  constructor() {
+  constructor(private store: Store<AppState>) {
+  }
+
+  ngOnInit(): void {
+    this.store.dispatch(checkLogin());
   }
 }

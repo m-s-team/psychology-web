@@ -14,8 +14,8 @@ export class AuthEffect {
     tap(() => this.authService.loginWithRedirect())
   ), {dispatch: false});
 
-  loginComplete$ = createEffect(() => this.actions$.pipe(
-    ofType(AppActionTypes.LoginComplete),
+  checkLogin$ = createEffect(() => this.actions$.pipe(
+    ofType(AppActionTypes.CheckLogin, AppActionTypes.LoginComplete),
     exhaustMap(() => this.authService.isAuthenticated$.pipe(
       map(result => {
         if (result)
