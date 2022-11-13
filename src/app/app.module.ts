@@ -27,11 +27,12 @@ import { NeoComponent } from './panel/assessments/neo/neo.component';
 import { MbtiComponent } from './panel/assessments/mbti/mbti.component';
 import { StrongComponent } from './panel/assessments/strong/strong.component';
 import { StoreModule } from '@ngrx/store';
-import { reducer } from "./state/app.reducer";
+import { reducers } from "./state/app.reducer";
 import { EffectsModule } from '@ngrx/effects';
-import { AuthEffect } from "./state/auth.effects";
+import { AuthEffect } from "./state/effects/auth.effects";
 import { environment } from "../environments/environment";
 import { CallbackComponent } from './callback/callback.component';
+import { StoreDevtoolsModule } from '@ngrx/store-devtools';
 
 @NgModule({
   declarations: [
@@ -89,8 +90,13 @@ import { CallbackComponent } from './callback/callback.component';
       echarts: () => import('echarts')
     }),
     HttpClientModule,
-    StoreModule.forRoot({app: reducer}, {}),
-    EffectsModule.forRoot([AuthEffect])
+    StoreModule.forRoot(reducers),
+    EffectsModule.forRoot([AuthEffect]),
+    StoreDevtoolsModule.instrument({
+      name: 'Psychology',
+      maxAge: 30,
+      logOnly: environment.production
+    })
   ],
   providers: [
     {

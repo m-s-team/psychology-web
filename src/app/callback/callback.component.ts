@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { Store } from "@ngrx/store";
+import { AppState } from "../state/app.state";
+import { loginComplete } from "../state/app.action";
 
 @Component({
   selector: 'app-callback',
@@ -7,10 +10,10 @@ import { Component, OnInit } from '@angular/core';
 })
 export class CallbackComponent implements OnInit {
 
-  constructor() { }
+  constructor(private store: Store<{app: AppState}>) { }
 
   ngOnInit(): void {
-    console.log("mannnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnn")
+    this.store.dispatch(loginComplete());
   }
 
 }
