@@ -2,8 +2,8 @@
   <div class="toolbar" fxLayout fxLayoutAlign="space-around center">
     <mat-form-field appearance="standard">
       <mat-label>لیست آزمون‌ها</mat-label>
-      <mat-select [value]="selectedTest$ | async">
-        <mat-option *ngFor="let test of tests$ | async; index as i" [value]="i">{{ test.createdDate | date:'full' }}</mat-option>
+      <mat-select #testSelect [value]="selectedTest$ | async" (selectionChange)="onTestChange(testSelect.value)">
+        <mat-option *ngFor="let test of tests$ | async; index as i" [value]="i+1">{{ test.createdDate | date:'full' }}</mat-option>
       </mat-select>
     </mat-form-field>
     <button mat-icon-button color="primary" aria-label="ساخت یک آزمون جیمز برت جدید">
@@ -13,92 +13,92 @@
       <mat-icon>delete</mat-icon>
     </button>
   </div>
-<!--  <ng-container *ngIf="tests$ | async as tests">-->
-<!--    <div class="test-group" fxLayout="column" *ngIf="selectedTest$ | async as selectedTest">-->
-<!--      <div fxLayout="column" fxLayout.gt-xs="row" fxLayoutAlign="center center">-->
-<!--        <button-->
-<!--          mat-flat-button-->
-<!--          matBadge="🗸"-->
-<!--          matBadgePosition="before"-->
-<!--          matBadgeColor="primary"-->
-<!--          [matBadgeHidden]="tests[selectedTest].visualReasoningSubtest.completedDate == null"-->
-<!--          routerLink="/md/visual-reasoning">-->
-<!--          استدلال تصویری-->
-<!--        </button>-->
-<!--        <button-->
-<!--          mat-flat-button-->
-<!--          matBadge="🗸"-->
-<!--          matBadgePosition="before"-->
-<!--          matBadgeColor="primary"-->
-<!--          [matBadgeHidden]="tests[selectedTest].numericalReasoningSubtest.completedDate == null"-->
-<!--          routerLink="/md/numerical-reasoning">-->
-<!--          استدلال ریاضی-->
-<!--        </button>-->
-<!--        <button-->
-<!--          mat-flat-button-->
-<!--          matBadge="🗸"-->
-<!--          matBadgePosition="before"-->
-<!--          matBadgeColor="primary"-->
-<!--          [matBadgeHidden]="tests[selectedTest].verbalAnalysisSubtest.completedDate == null"-->
-<!--          routerLink="/md/verbal-analysis">-->
-<!--          تحلیل کلامی-->
-<!--        </button>-->
-<!--      </div>-->
-<!--      <div fxLayout="column" fxLayout.gt-xs="row" fxLayoutAlign="center center">-->
-<!--        <button-->
-<!--          mat-flat-button-->
-<!--          matBadge="🗸"-->
-<!--          matBadgePosition="before"-->
-<!--          matBadgeColor="primary"-->
-<!--          [matBadgeHidden]="tests[selectedTest].sequentialReasoningSubtest.completedDate == null"-->
-<!--          routerLink="/md/sequential-reasoning">-->
-<!--          استدلال توالی-->
-<!--        </button>-->
-<!--        <button-->
-<!--          mat-flat-button-->
-<!--          matBadge="🗸"-->
-<!--          matBadgePosition="before"-->
-<!--          matBadgeColor="primary"-->
-<!--          [matBadgeHidden]="tests[selectedTest].spatialRecognitionSubtest.completedDate == null"-->
-<!--          routerLink="/md/spatial-recognition">-->
-<!--          تشخیص فضایی-->
-<!--        </button>-->
-<!--        <button-->
-<!--          mat-flat-button-->
-<!--          matBadge="🗸"-->
-<!--          matBadgePosition="before"-->
-<!--          matBadgeColor="primary"-->
-<!--          [matBadgeHidden]="tests[selectedTest].threeDSubtest.completedDate == null"-->
-<!--          routerLink="/md/three-d">-->
-<!--          سه بعدی-->
-<!--        </button>-->
-<!--      </div>-->
-<!--      <div fxLayout="column" fxLayout.gt-xs="row" fxLayoutAlign="center center">-->
-<!--        <button-->
-<!--          mat-flat-button-->
-<!--          matBadge="🗸"-->
-<!--          matBadgePosition="before"-->
-<!--          matBadgeColor="primary"-->
-<!--          routerLink="/md/systems">-->
-<!--          دقت (سیستم)-->
-<!--        </button>-->
-<!--        <button-->
-<!--          mat-flat-button-->
-<!--          matBadge="🗸"-->
-<!--          matBadgePosition="before"-->
-<!--          matBadgeColor="primary"-->
-<!--          routerLink="/md/vocabulary">-->
-<!--          واژه سنجی-->
-<!--        </button>-->
-<!--        <button-->
-<!--          mat-flat-button-->
-<!--          matBadge="🗸"-->
-<!--          matBadgePosition="before"-->
-<!--          matBadgeColor="primary"-->
-<!--          routerLink="/md/figurework">-->
-<!--          کار با ارقام-->
-<!--        </button>-->
-<!--      </div>-->
-<!--    </div>-->
-<!--  </ng-container>-->
+  <ng-container *ngIf="tests$ | async as tests">
+    <div class="test-group" fxLayout="column" *ngIf="selectedTest$ | async as index">
+      <div fxLayout="column" fxLayout.gt-xs="row" fxLayoutAlign="center center">
+        <button
+          mat-flat-button
+          matBadge="🗸"
+          matBadgePosition="before"
+          matBadgeColor="primary"
+          [matBadgeHidden]="tests[index - 1].visualReasoningSubtest.completedDate == null"
+          routerLink="/md/visual-reasoning">
+          استدلال تصویری
+        </button>
+        <button
+          mat-flat-button
+          matBadge="🗸"
+          matBadgePosition="before"
+          matBadgeColor="primary"
+          [matBadgeHidden]="tests[index - 1].numericalReasoningSubtest.completedDate == null"
+          routerLink="/md/numerical-reasoning">
+          استدلال ریاضی
+        </button>
+        <button
+          mat-flat-button
+          matBadge="🗸"
+          matBadgePosition="before"
+          matBadgeColor="primary"
+          [matBadgeHidden]="tests[index - 1].verbalAnalysisSubtest.completedDate == null"
+          routerLink="/md/verbal-analysis">
+          تحلیل کلامی
+        </button>
+      </div>
+      <div fxLayout="column" fxLayout.gt-xs="row" fxLayoutAlign="center center">
+        <button
+          mat-flat-button
+          matBadge="🗸"
+          matBadgePosition="before"
+          matBadgeColor="primary"
+          [matBadgeHidden]="tests[index - 1].sequentialReasoningSubtest.completedDate == null"
+          routerLink="/md/sequential-reasoning">
+          استدلال توالی
+        </button>
+        <button
+          mat-flat-button
+          matBadge="🗸"
+          matBadgePosition="before"
+          matBadgeColor="primary"
+          [matBadgeHidden]="tests[index - 1].spatialRecognitionSubtest.completedDate == null"
+          routerLink="/md/spatial-recognition">
+          تشخیص فضایی
+        </button>
+        <button
+          mat-flat-button
+          matBadge="🗸"
+          matBadgePosition="before"
+          matBadgeColor="primary"
+          [matBadgeHidden]="tests[index - 1].threeDSubtest.completedDate == null"
+          routerLink="/md/three-d">
+          سه بعدی
+        </button>
+      </div>
+      <div fxLayout="column" fxLayout.gt-xs="row" fxLayoutAlign="center center">
+        <button
+          mat-flat-button
+          matBadge="🗸"
+          matBadgePosition="before"
+          matBadgeColor="primary"
+          routerLink="/md/systems">
+          دقت (سیستم)
+        </button>
+        <button
+          mat-flat-button
+          matBadge="🗸"
+          matBadgePosition="before"
+          matBadgeColor="primary"
+          routerLink="/md/vocabulary">
+          واژه سنجی
+        </button>
+        <button
+          mat-flat-button
+          matBadge="🗸"
+          matBadgePosition="before"
+          matBadgeColor="primary"
+          routerLink="/md/figurework">
+          کار با ارقام
+        </button>
+      </div>
+    </div>
+  </ng-container>
 </div>
