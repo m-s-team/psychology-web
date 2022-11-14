@@ -11,7 +11,9 @@ export class AuthEffect {
 
   login$ = createEffect(() => this.actions$.pipe(
     ofType(AppActionTypes.Login),
-    tap(() => this.authService.loginWithRedirect())
+    tap(() => this.authService.loginWithRedirect({
+      appState: { target: '/panel/portal'}
+    }))
   ), {dispatch: false});
 
   checkLogin$ = createEffect(() => this.actions$.pipe(

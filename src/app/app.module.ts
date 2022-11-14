@@ -34,6 +34,7 @@ import { environment } from "../environments/environment";
 import { CallbackComponent } from './callback/callback.component';
 import { StoreDevtoolsModule } from '@ngrx/store-devtools';
 import { BarrettEffect } from "./state/effects/barrett.effects";
+import { HomeComponent } from './home/home.component';
 
 @NgModule({
   declarations: [
@@ -53,7 +54,8 @@ import { BarrettEffect } from "./state/effects/barrett.effects";
     NeoComponent,
     MbtiComponent,
     StrongComponent,
-    CallbackComponent
+    CallbackComponent,
+    HomeComponent
   ],
   imports: [
     BrowserModule,
