@@ -6,7 +6,7 @@
         <mat-option *ngFor="let test of tests$ | async; index as i" [value]="i+1">{{ test.createdDate | date:'full' }}</mat-option>
       </mat-select>
     </mat-form-field>
-    <button mat-icon-button color="primary" aria-label="ساخت یک آزمون جیمز برت جدید">
+    <button mat-icon-button color="primary" aria-label="ساخت یک آزمون جیمز برت جدید" (click)="onCreateTest()">
       <mat-icon>add</mat-icon>
     </button>
     <button mat-icon-button color="warn" aria-label="حذف آزمون انتخاب شده">

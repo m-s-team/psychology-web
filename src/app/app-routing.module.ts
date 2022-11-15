@@ -1,10 +1,8 @@
 import { RouterModule, Routes } from '@angular/router';
 import { NgModule } from '@angular/core';
 import { PortalComponent } from "./panel/portal/portal.component";
-import { WaisIvComponent } from "./md/wais-iv/wais-iv.component";
 import { PanelComponent } from "./panel/panel.component";
 import { MdComponent } from "./md/md.component";
-import { VisualReasoningComponent } from "./md/barrett/visual-reasoning/visual-reasoning.component";
 import { BarrettComponent } from "./panel/assessments/barrett/barrett.component";
 import { WalletComponent } from "./panel/wallet/wallet.component";
 import { GardnerComponent } from "./panel/assessments/gardner/gardner.component";
@@ -31,10 +29,7 @@ const routes: Routes = [
     ]
   },
   {
-    path: 'md', component: MdComponent, children: [
-      {path: 'waisiv', component: WaisIvComponent},
-      {path: 'visual-reasoning', component: VisualReasoningComponent}
-    ]
+    path: 'md', component: MdComponent, children: []
   },
   {path: 'home', component: HomeComponent},
   {path: 'callback', component: CallbackComponent},

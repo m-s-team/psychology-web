@@ -9,7 +9,9 @@ export enum AppActionTypes {
   CheckLogin = '[Auth] CheckLogin',
   LoadBarrettTests = '[BarrettTest] LoadBarrettTests',
   SetBarrettTests = '[BarrettTest] SetBarrettTests',
-  SetSelectedBarrettTestIndex = '[BarrettTest] SetSelectedBarrettTestIndex'
+  SetSelectedBarrettTestIndex = '[BarrettTest] SetSelectedBarrettTestIndex',
+  CreateBarrettTest = '[BarrettTest] CreateBarrettTest',
+  CreateBarrettTestSuccess = '[BarrettTest] CreateBarrettTestSuccess'
 }
 
 export const login = createAction(
@@ -45,3 +47,12 @@ export const setSelectedBarrettTestIndex = createAction(
   AppActionTypes.SetSelectedBarrettTestIndex,
   props<{index: number}>()
 );
+
+export const createBarrettTest = createAction(
+  AppActionTypes.CreateBarrettTest
+)
+
+export const createBarrettTestSuccess = createAction(
+  AppActionTypes.CreateBarrettTestSuccess,
+  props<{test: BarrettTest}>()
+)

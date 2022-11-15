@@ -4,7 +4,7 @@ import { Store } from "@ngrx/store";
 import { AppState } from "../../../state/app.state";
 import { Observable } from "rxjs";
 import { selectBarrettTests, selectSelectedBarrettTest } from "../../../state/app.selector";
-import { setSelectedBarrettTestIndex } from "../../../state/app.action";
+import { createBarrettTest, setSelectedBarrettTestIndex } from "../../../state/app.action";
 
 @Component({
   selector: 'app-barrett',
@@ -26,5 +26,9 @@ export class BarrettComponent implements OnInit {
 
   onTestChange(value: number) {
     this.store.dispatch(setSelectedBarrettTestIndex({index: value}))
+  }
+
+  onCreateTest() {
+    this.store.dispatch(createBarrettTest());
   }
 }
