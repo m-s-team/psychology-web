@@ -1,6 +1,12 @@
 import { ActionReducerMap, createReducer, on } from "@ngrx/store";
 import { AppState } from "./app.state";
-import { createBarrettTestSuccess, loginSuccess, setBarrettTests, setSelectedBarrettTestIndex } from "./app.action";
+import {
+  createBarrettTestSuccess,
+  deleteSelectedBarrettTestSuccess,
+  loginSuccess,
+  setBarrettTests,
+  setSelectedBarrettTestIndex
+} from "./app.action";
 
 const initialState: AppState = {
   auth: {
@@ -21,6 +27,7 @@ export const reducers:ActionReducerMap<AppState> = {
     initialState.barrettTest,
     on(setBarrettTests, (state, {tests}) => ({...state, tests: tests})),
     on(setSelectedBarrettTestIndex, (state, {index}) => ({...state, selectedTest: index})),
-    on(createBarrettTestSuccess, (state, {test}) => ({...state, tests: state.tests.concat(test)}))
+    on(createBarrettTestSuccess, (state, {test}) => ({...state, tests: state.tests.concat(test)})),
+    on(deleteSelectedBarrettTestSuccess, (state, {id}) => ({...state, tests: state.tests.filter(test => test.id != id)}))
   )
 }

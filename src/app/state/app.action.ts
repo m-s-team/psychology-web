@@ -11,7 +11,9 @@ export enum AppActionTypes {
   SetBarrettTests = '[BarrettTest] SetBarrettTests',
   SetSelectedBarrettTestIndex = '[BarrettTest] SetSelectedBarrettTestIndex',
   CreateBarrettTest = '[BarrettTest] CreateBarrettTest',
-  CreateBarrettTestSuccess = '[BarrettTest] CreateBarrettTestSuccess'
+  CreateBarrettTestSuccess = '[BarrettTest] CreateBarrettTestSuccess',
+  DeleteSelectedBarrettTest = '[BarrettTest] DeleteSelectedBarrettTest',
+  DeleteSelectedBarrettTestSuccess = '[BarrettTest] DeleteSelectedBarrettTestSuccess'
 }
 
 export const login = createAction(
@@ -50,9 +52,18 @@ export const setSelectedBarrettTestIndex = createAction(
 
 export const createBarrettTest = createAction(
   AppActionTypes.CreateBarrettTest
-)
+);
 
 export const createBarrettTestSuccess = createAction(
   AppActionTypes.CreateBarrettTestSuccess,
   props<{test: BarrettTest}>()
-)
+);
+
+export const deleteSelectedBarrettTest = createAction(
+  AppActionTypes.DeleteSelectedBarrettTest
+);
+
+export const deleteSelectedBarrettTestSuccess = createAction(
+  AppActionTypes.DeleteSelectedBarrettTestSuccess,
+  props<{id: number}>()
+);

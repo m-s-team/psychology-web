@@ -9,7 +9,7 @@
     <button mat-icon-button color="primary" aria-label="ساخت یک آزمون جیمز برت جدید" (click)="onCreateTest()">
       <mat-icon>add</mat-icon>
     </button>
-    <button mat-icon-button color="warn" aria-label="حذف آزمون انتخاب شده">
+    <button mat-icon-button color="warn" aria-label="حذف آزمون انتخاب شده" (click)="onDeleteTest()" [disabled]="(selectedTest$ | async) == 0">
       <mat-icon>delete</mat-icon>
     </button>
   </div>

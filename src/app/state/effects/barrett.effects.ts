@@ -4,7 +4,7 @@ import { BarrettTestService } from "../../services/barrett/barrett-test.service"
 import {
   AppActionTypes,
   createBarrettTest,
-  createBarrettTestSuccess,
+  createBarrettTestSuccess, deleteSelectedBarrettTest, deleteSelectedBarrettTestSuccess,
   setBarrettTests,
   setSelectedBarrettTestIndex
 } from "../app.action";
@@ -12,7 +12,7 @@ import { concatMap, map, mergeMap, of, switchMap } from "rxjs";
 import { BarrettTest } from "../../entities/barrett/barrett-test.model";
 import { Store } from "@ngrx/store";
 import { AppState } from "../app.state";
-import { selectBarrettTests } from "../app.selector";
+import { selectBarrettTests, selectSelectedBarrettTest } from "../app.selector";
 
 @Injectable()
 export class BarrettEffect {
@@ -47,5 +47,24 @@ export class BarrettEffect {
     switchMap( ([action, tests]) => of(
       setSelectedBarrettTestIndex({index: tests.length}))
     )
+  ));
+
+  deleteSelectedBarrettTest$ = createEffect(() => this.actions$.pipe(
+    ofType(deleteSelectedBarrettTest),
+    concatLatestFrom(() => [
+      this.store.select(selectBarrettTests),
+      this.store.select(selectSelectedBarrettTest)
+    ]),
+    concatMap(([action, tests, index]) => this.barrettService.delete(tests[index - 1].id).pipe(
+      map(() => deleteSelectedBarrettTestSuccess({id: tests[index - 1].id}))
+    ))
+  ));
+
+  deleteSelectedBarrettTestSuccess$ = createEffect(() => this.actions$.pipe(
+    ofType(deleteSelectedBarrettTestSuccess),
+    concatLatestFrom(() => this.store.select(selectBarrettTests)),
+    switchMap(([action, tests]) => of(
+      setSelectedBarrettTestIndex({index: tests.length})
+    ))
   ))
 }
