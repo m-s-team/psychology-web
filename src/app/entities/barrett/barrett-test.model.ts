@@ -15,6 +15,7 @@ export class BarrettTest {
 class Subtest {
   constructor(
     public createdDate: Date,
+    public requiredTime: number,
     public completedDate: Date
   ) {
   }
