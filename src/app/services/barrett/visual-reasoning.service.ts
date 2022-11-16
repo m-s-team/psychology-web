@@ -28,4 +28,5 @@ export class VisualReasoningService {
     const url = this.getUrl(testId);
     return this.http.post<VisualReasoning>(url, {},{observe: 'response'});
   }
+
 }

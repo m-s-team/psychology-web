@@ -47,7 +47,7 @@ export class BarrettEffect {
   createBarrettTestSuccess$ = createEffect(() => this.actions$.pipe(
     ofType(createBarrettTestSuccess),
     concatLatestFrom(() => this.store.select(selectBarrettTests)),
-    switchMap( ([action, tests]) => of(
+    switchMap( ([, tests]) => of(
       setSelectedBarrettTestIndex({index: tests.length}))
     )
   ));
@@ -58,7 +58,7 @@ export class BarrettEffect {
       this.store.select(selectBarrettTests),
       this.store.select(selectSelectedBarrettTest)
     ]),
-    concatMap(([action, tests, index]) => this.barrettService.deleteById(tests[index - 1].id).pipe(
+    concatMap(([, tests, index]) => this.barrettService.deleteById(tests[index - 1].id).pipe(
       map(() => deleteSelectedBarrettTestSuccess({id: tests[index - 1].id}))
     ))
   ));
@@ -66,7 +66,7 @@ export class BarrettEffect {
   deleteSelectedBarrettTestSuccess$ = createEffect(() => this.actions$.pipe(
     ofType(deleteSelectedBarrettTestSuccess),
     concatLatestFrom(() => this.store.select(selectBarrettTests)),
-    switchMap(([action, tests]) => of(
+    switchMap(([, tests]) => of(
       setSelectedBarrettTestIndex({index: tests.length})
     ))
   ))

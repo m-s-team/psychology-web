@@ -27,7 +27,7 @@ import { NeoComponent } from './panel/assessments/neo/neo.component';
 import { MbtiComponent } from './panel/assessments/mbti/mbti.component';
 import { StrongComponent } from './panel/assessments/strong/strong.component';
 import { StoreModule } from '@ngrx/store';
-import { reducers } from "./state/reducers/app.reducer";
+import { reducers } from "./state/reducers";
 import { EffectsModule } from '@ngrx/effects';
 import { AuthEffect } from "./state/effects/auth.effects";
 import { environment } from "../environments/environment";
@@ -35,6 +35,7 @@ import { CallbackComponent } from './callback/callback.component';
 import { StoreDevtoolsModule } from '@ngrx/store-devtools';
 import { BarrettEffect } from "./state/effects/barrett.effects";
 import { HomeComponent } from './home/home.component';
+import { VisualReasoningEffect } from "./state/effects/visual-reasoning.effects";
 
 @NgModule({
   declarations: [
@@ -94,7 +95,7 @@ import { HomeComponent } from './home/home.component';
     }),
     HttpClientModule,
     StoreModule.forRoot(reducers),
-    EffectsModule.forRoot([AuthEffect, BarrettEffect]),
+    EffectsModule.forRoot([AuthEffect, BarrettEffect, VisualReasoningEffect]),
     StoreDevtoolsModule.instrument({
       name: 'Psychology',
       maxAge: 30,
