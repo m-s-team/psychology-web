@@ -27,7 +27,7 @@ import { NeoComponent } from './panel/assessments/neo/neo.component';
 import { MbtiComponent } from './panel/assessments/mbti/mbti.component';
 import { StrongComponent } from './panel/assessments/strong/strong.component';
 import { StoreModule } from '@ngrx/store';
-import { reducers } from "./state/app.reducer";
+import { reducers } from "./state/reducers/app.reducer";
 import { EffectsModule } from '@ngrx/effects';
 import { AuthEffect } from "./state/effects/auth.effects";
 import { environment } from "../environments/environment";

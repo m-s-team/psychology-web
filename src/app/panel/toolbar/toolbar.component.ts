@@ -2,8 +2,8 @@ import { Component, EventEmitter, Inject, OnInit, Output } from '@angular/core';
 import { AuthService } from "@auth0/auth0-angular";
 import { DOCUMENT } from "@angular/common";
 import { Store } from "@ngrx/store";
-import { AppState } from "../../state/app.state";
-import { login } from "../../state/app.action";
+import { AppState } from "../../state/states";
+import { login } from "../../state/actions/auth.action";
 
 @Component({
   selector: 'app-toolbar',

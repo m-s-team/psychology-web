@@ -1,10 +1,14 @@
 import { Component, OnInit } from '@angular/core';
 import { BarrettTest } from "../../../entities/barrett/barrett-test.model";
 import { Store } from "@ngrx/store";
-import { AppState } from "../../../state/app.state";
+import { AppState } from "../../../state/states";
 import { Observable } from "rxjs";
-import { selectBarrettTests, selectSelectedBarrettTest } from "../../../state/app.selector";
-import { createBarrettTest, deleteSelectedBarrettTest, setSelectedBarrettTestIndex } from "../../../state/app.action";
+import { selectBarrettTests, selectSelectedBarrettTest } from "../../../state/selectors/barrett.selector";
+import {
+    createBarrettTest,
+    deleteSelectedBarrettTest,
+    setSelectedBarrettTestIndex
+} from "../../../state/actions/barrett.action";
 
 @Component({
   selector: 'app-barrett',

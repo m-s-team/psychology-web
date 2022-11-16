@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Store } from "@ngrx/store";
-import { AppState } from "../state/app.state";
-import { loginComplete } from "../state/app.action";
+import { AppState } from "../state/states";
+import { loginComplete } from "../state/actions/auth.action";
 
 @Component({
   selector: 'app-callback',

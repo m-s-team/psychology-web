@@ -22,7 +22,7 @@
           matBadgePosition="before"
           matBadgeColor="primary"
           [matBadgeHidden]="tests[index - 1].visualReasoningSubtest.completedDate == null"
-          routerLink="/md/visual-reasoning">
+          [routerLink]="['/md', 'barrett', tests[index - 1].id, 'vr']">
           استدلال تصویری
         </button>
         <button

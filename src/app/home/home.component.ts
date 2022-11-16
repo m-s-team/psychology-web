@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Store } from "@ngrx/store";
-import { AppState } from "../state/app.state";
-import { login } from "../state/app.action";
+import { AppState } from "../state/states";
+import { login } from "../state/actions/auth.action";
 
 @Component({
   selector: 'app-home',

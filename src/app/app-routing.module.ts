@@ -13,6 +13,7 @@ import { StrongComponent } from "./panel/assessments/strong/strong.component";
 import { MbtiComponent } from "./panel/assessments/mbti/mbti.component";
 import { CallbackComponent } from "./callback/callback.component";
 import { HomeComponent } from "./home/home.component";
+import { VisualReasoningComponent } from "./md/barrett/visual-reasoning/visual-reasoning.component";
 
 const routes: Routes = [
   {
@@ -29,7 +30,9 @@ const routes: Routes = [
     ]
   },
   {
-    path: 'md', component: MdComponent, children: []
+    path: 'md', component: MdComponent, children: [
+      {path: 'barrett/:id/vr', component: VisualReasoningComponent}
+    ]
   },
   {path: 'home', component: HomeComponent},
   {path: 'callback', component: CallbackComponent},

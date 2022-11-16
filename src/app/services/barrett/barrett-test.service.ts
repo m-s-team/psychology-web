@@ -18,7 +18,7 @@ export class BarrettTestService {
     return this.http.get<BarrettTest[]>(this.resourceUrl, {observe: 'response'});
   }
 
-  delete(id: Number): Observable<HttpResponse<{}>> {
+  deleteById(id: Number): Observable<HttpResponse<{}>> {
     return this.http.delete(`${this.resourceUrl}/${id}`, { observe: 'response' });
   }
 

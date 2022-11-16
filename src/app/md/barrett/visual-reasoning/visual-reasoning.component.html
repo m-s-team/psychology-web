@@ -1,86 +1,67 @@
-<div class="mat-app-background fill" fxLayout="column">
-  <div class="toolbar" fxLayout fxLayoutAlign="space-around center">
-    <button mat-button aria-label="سوال قبلی">
-      <mat-icon>arrow_forward</mat-icon>
-      قبلی
-    </button>
-    <mat-form-field appearance="standard">
-      <mat-label>لیست آزمون‌ها</mat-label>
-      <mat-select value="option1">
-        <mat-option value="option1">Option 1</mat-option>
-        <mat-option value="option2">Option 2</mat-option>
-        <mat-option value="option3">Option 3</mat-option>
-      </mat-select>
-    </mat-form-field>
-    <button mat-button aria-label="سوال بعدی">
-      بعدی
-      <mat-icon>arrow_back</mat-icon>
-    </button>
-  </div>
-
-  <div class="body" fxLayout="column">
-    <div matBadge="01" matBadgePosition="before" matBadgeColor="accent" class="test" fxLayout="column" fxLayoutAlign="start stretch">
-      <div class="question mat-elevation-z10" fxLayout="column" fxLayoutAlign="start center">
+<div class="body" fxLayout="column">
+  <div matBadge="01" matBadgePosition="before" matBadgeColor="accent" class="test" fxLayout="column"
+       fxLayoutAlign="start stretch">
+    <div class="question mat-elevation-z10" fxLayout="column" fxLayoutAlign="start center">
       <span>
         کدام تصویر متفاوت از دیگر تصاویر است؟
       </span>
-        <img hidden src="" alt="question">
-      </div>
-
-      <mat-button-toggle-group fxFlexAlign="center" name="fontStyle" aria-label="Font Style">
-        <mat-button-toggle value="1">
-          <img src="https://static.psychology.ml/barrett-test/visual-reasoning/1000000001/option-1.png" alt="option-1">
-          <br> 1
-        </mat-button-toggle>
-        <mat-button-toggle value="2">
-          <img src="https://static.psychology.ml/barrett-test/visual-reasoning/1000000001/option-2.png" alt="option-2">
-          <br> 2
-        </mat-button-toggle>
-        <mat-button-toggle value="3">
-          <img src="https://static.psychology.ml/barrett-test/visual-reasoning/1000000001/option-3.png" alt="option-3">
-          <br> 3
-        </mat-button-toggle>
-        <mat-button-toggle value="4">
-          <img src="https://static.psychology.ml/barrett-test/visual-reasoning/1000000001/option-4.png" alt="option-4">
-          <br> 4
-        </mat-button-toggle>
-        <mat-button-toggle hidden value="5">
-          <img src="" alt="option-5">
-          <br> 5
-        </mat-button-toggle>
-      </mat-button-toggle-group>
+      <img hidden src="" alt="question">
     </div>
 
-    <div matBadge="02" matBadgePosition="before" matBadgeColor="accent" class="test" fxLayout="column" fxLayoutAlign="start stretch">
-      <div class="question mat-elevation-z10" fxLayout="column" fxLayoutAlign="start center">
+    <mat-button-toggle-group fxFlexAlign="center" name="fontStyle" aria-label="Font Style">
+      <mat-button-toggle value="1">
+        <img src="https://static.psychology.ml/barrett-test/visual-reasoning/1000000001/option-1.png" alt="option-1">
+        <br> 1
+      </mat-button-toggle>
+      <mat-button-toggle value="2">
+        <img src="https://static.psychology.ml/barrett-test/visual-reasoning/1000000001/option-2.png" alt="option-2">
+        <br> 2
+      </mat-button-toggle>
+      <mat-button-toggle value="3">
+        <img src="https://static.psychology.ml/barrett-test/visual-reasoning/1000000001/option-3.png" alt="option-3">
+        <br> 3
+      </mat-button-toggle>
+      <mat-button-toggle value="4">
+        <img src="https://static.psychology.ml/barrett-test/visual-reasoning/1000000001/option-4.png" alt="option-4">
+        <br> 4
+      </mat-button-toggle>
+      <mat-button-toggle hidden value="5">
+        <img src="" alt="option-5">
+        <br> 5
+      </mat-button-toggle>
+    </mat-button-toggle-group>
+  </div>
+
+  <div matBadge="02" matBadgePosition="before" matBadgeColor="accent" class="test" fxLayout="column"
+       fxLayoutAlign="start stretch">
+    <div class="question mat-elevation-z10" fxLayout="column" fxLayoutAlign="start center">
       <span>
         تصویر بعدی کدام است؟
       </span>
-        <img src="https://static.psychology.ml/barrett-test/visual-reasoning/1000000002/question.png" alt="question">
-      </div>
-
-      <mat-button-toggle-group fxFlexAlign="center" name="fontStyle" aria-label="Font Style">
-        <mat-button-toggle value="1">
-          <img src="https://static.psychology.ml/barrett-test/visual-reasoning/1000000002/option-1.png" alt="option-1">
-          <br> 1
-        </mat-button-toggle>
-        <mat-button-toggle value="2">
-          <img src="https://static.psychology.ml/barrett-test/visual-reasoning/1000000002/option-2.png" alt="option-2">
-          <br> 2
-        </mat-button-toggle>
-        <mat-button-toggle value="3">
-          <img src="https://static.psychology.ml/barrett-test/visual-reasoning/1000000002/option-3.png" alt="option-3">
-          <br> 3
-        </mat-button-toggle>
-        <mat-button-toggle value="4">
-          <img src="https://static.psychology.ml/barrett-test/visual-reasoning/1000000002/option-4.png" alt="option-4">
-          <br> 4
-        </mat-button-toggle>
-        <mat-button-toggle value="5">
-          <img src="https://static.psychology.ml/barrett-test/visual-reasoning/1000000002/option-5.png" alt="option-5">
-          <br> 5
-        </mat-button-toggle>
-      </mat-button-toggle-group>
+      <img src="https://static.psychology.ml/barrett-test/visual-reasoning/1000000002/question.png" alt="question">
     </div>
+
+    <mat-button-toggle-group fxFlexAlign="center" name="fontStyle" aria-label="Font Style">
+      <mat-button-toggle value="1">
+        <img src="https://static.psychology.ml/barrett-test/visual-reasoning/1000000002/option-1.png" alt="option-1">
+        <br> 1
+      </mat-button-toggle>
+      <mat-button-toggle value="2">
+        <img src="https://static.psychology.ml/barrett-test/visual-reasoning/1000000002/option-2.png" alt="option-2">
+        <br> 2
+      </mat-button-toggle>
+      <mat-button-toggle value="3">
+        <img src="https://static.psychology.ml/barrett-test/visual-reasoning/1000000002/option-3.png" alt="option-3">
+        <br> 3
+      </mat-button-toggle>
+      <mat-button-toggle value="4">
+        <img src="https://static.psychology.ml/barrett-test/visual-reasoning/1000000002/option-4.png" alt="option-4">
+        <br> 4
+      </mat-button-toggle>
+      <mat-button-toggle value="5">
+        <img src="https://static.psychology.ml/barrett-test/visual-reasoning/1000000002/option-5.png" alt="option-5">
+        <br> 5
+      </mat-button-toggle>
+    </mat-button-toggle-group>
   </div>
 </div>
