@@ -21,7 +21,7 @@
           matBadge="🗸"
           matBadgePosition="before"
           matBadgeColor="primary"
-          [matBadgeHidden]="tests[index - 1].visualReasoningSubtest.completedDate == null"
+          [matBadgeHidden]="tests[index - 1].visualReasoningSubtest.createdDate == null"
           [routerLink]="['/md', 'barrett', tests[index - 1].id, 'vr']">
           استدلال تصویری
         </button>
@@ -30,7 +30,7 @@
           matBadge="🗸"
           matBadgePosition="before"
           matBadgeColor="primary"
-          [matBadgeHidden]="tests[index - 1].numericalReasoningSubtest.completedDate == null"
+          [matBadgeHidden]="tests[index - 1].numericalReasoningSubtest.createdDate == null"
           routerLink="/md/numerical-reasoning">
           استدلال ریاضی
         </button>
@@ -39,7 +39,7 @@
           matBadge="🗸"
           matBadgePosition="before"
           matBadgeColor="primary"
-          [matBadgeHidden]="tests[index - 1].verbalAnalysisSubtest.completedDate == null"
+          [matBadgeHidden]="tests[index - 1].verbalAnalysisSubtest.createdDate == null"
           routerLink="/md/verbal-analysis">
           تحلیل کلامی
         </button>
@@ -50,7 +50,7 @@
           matBadge="🗸"
           matBadgePosition="before"
           matBadgeColor="primary"
-          [matBadgeHidden]="tests[index - 1].sequentialReasoningSubtest.completedDate == null"
+          [matBadgeHidden]="tests[index - 1].sequentialReasoningSubtest.createdDate == null"
           routerLink="/md/sequential-reasoning">
           استدلال توالی
         </button>
@@ -59,7 +59,7 @@
           matBadge="🗸"
           matBadgePosition="before"
           matBadgeColor="primary"
-          [matBadgeHidden]="tests[index - 1].spatialRecognitionSubtest.completedDate == null"
+          [matBadgeHidden]="tests[index - 1].spatialRecognitionSubtest.createdDate == null"
           routerLink="/md/spatial-recognition">
           تشخیص فضایی
         </button>
@@ -68,7 +68,7 @@
           matBadge="🗸"
           matBadgePosition="before"
           matBadgeColor="primary"
-          [matBadgeHidden]="tests[index - 1].threeDSubtest.completedDate == null"
+          [matBadgeHidden]="tests[index - 1].threeDSubtest.createdDate == null"
           routerLink="/md/three-d">
           سه بعدی
         </button>

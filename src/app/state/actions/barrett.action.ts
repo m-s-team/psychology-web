@@ -8,7 +8,9 @@ export enum BarrettActionTypes {
   CreateBarrettTest = '[BarrettTest] CreateBarrettTest',
   CreateBarrettTestSuccess = '[BarrettTest] CreateBarrettTestSuccess',
   DeleteSelectedBarrettTest = '[BarrettTest] DeleteSelectedBarrettTest',
-  DeleteSelectedBarrettTestSuccess = '[BarrettTest] DeleteSelectedBarrettTestSuccess'
+  DeleteSelectedBarrettTestSuccess = '[BarrettTest] DeleteSelectedBarrettTestSuccess',
+  SetVisualReasoningCreatedDate = '[BarrettTest] SetVisualReasoningCreatedDate',
+  SetVisualReasoningCompletedDate = '[BarrettTest] SetVisualReasoningCompletedDate'
 }
 
 export const loadBarrettTests = createAction(
@@ -42,3 +44,14 @@ export const deleteSelectedBarrettTestSuccess = createAction(
   BarrettActionTypes.DeleteSelectedBarrettTestSuccess,
   props<{ id: number }>()
 );
+
+export const setVisualReasoningCreatedDate = createAction(
+  BarrettActionTypes.SetVisualReasoningCreatedDate,
+  props<{testId: number, createdDate: Date}>()
+);
+
+export const setVisualReasoningCompletedDate = createAction(
+  BarrettActionTypes.SetVisualReasoningCompletedDate,
+  props<{testId: number, completedDate: Date}>()
+)
+

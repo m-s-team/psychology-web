@@ -3,10 +3,10 @@ import { createReducer, on } from "@ngrx/store";
 import { loadVisualReasoningTestSuccess } from "../actions/visual-reasoning.action";
 
 const initialState: VisualReasoningState = {
-  test: {}
+  subtest: null
 }
 
 export const visualReasoningReducer = createReducer(
   initialState,
-  on(loadVisualReasoningTestSuccess, (state, {test}) => ({...state, test: test})),
+  on(loadVisualReasoningTestSuccess, (state, {barretTestId, subtest}) => ({...state, subtest: subtest})),
 )

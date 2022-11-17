@@ -3,6 +3,7 @@ import { VisualReasoning } from "../../entities/barrett/visual-reasoning.model";
 
 export enum VisualReasoningActionTypes {
   LoadVisualReasoningTest = '[VisualReasoning] LoadVisualReasoningTest',
+  LoadVisualReasoningTestSuccess = '[VisualReasoning] LoadVisualReasoningTestSuccess',
 }
 
 export const loadVisualReasoningTest = createAction(
@@ -11,6 +12,6 @@ export const loadVisualReasoningTest = createAction(
 );
 
 export const loadVisualReasoningTestSuccess = createAction(
-  VisualReasoningActionTypes.LoadVisualReasoningTest,
-  props<{ test: VisualReasoning }>()
+  VisualReasoningActionTypes.LoadVisualReasoningTestSuccess,
+  props<{ barretTestId: number, subtest: VisualReasoning }>()
 );
