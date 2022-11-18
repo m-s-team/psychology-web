@@ -4,7 +4,9 @@ import {
   createBarrettTestSuccess,
   deleteSelectedBarrettTestSuccess,
   setBarrettTests,
-  setSelectedBarrettTestIndex, setVisualReasoningCompletedDate, setVisualReasoningCreatedDate
+  setSelectedBarrettTestIndex,
+  setVisualReasoningCompletedDate,
+  setVisualReasoningCreatedDate
 } from "../actions/barrett.action";
 
 const initialState: BarrettState = {

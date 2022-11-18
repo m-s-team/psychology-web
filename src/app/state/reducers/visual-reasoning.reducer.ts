@@ -1,12 +1,14 @@
 import { VisualReasoningState } from "../states/visual-reasoning.state";
 import { createReducer, on } from "@ngrx/store";
-import { loadVisualReasoningTestSuccess } from "../actions/visual-reasoning.action";
+import { changeVisualReasoningLoading, setVisualReasoningTest } from "../actions/visual-reasoning.action";
 
 const initialState: VisualReasoningState = {
+  loading: false,
   subtest: null
 }
 
 export const visualReasoningReducer = createReducer(
   initialState,
-  on(loadVisualReasoningTestSuccess, (state, {barretTestId, subtest}) => ({...state, subtest: subtest})),
+  on(changeVisualReasoningLoading, (state, {loading}) => ({...state, loading})),
+  on(setVisualReasoningTest, (state, {subtest}) => ({...state, subtest})),
 )

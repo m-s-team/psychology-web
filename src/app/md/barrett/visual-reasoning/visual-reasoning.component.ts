@@ -3,10 +3,14 @@ import { ActivatedRoute } from "@angular/router";
 import { VisualReasoningService } from "../../../services/barrett/visual-reasoning.service";
 import { Store } from "@ngrx/store";
 import { AppState } from "../../../state/states";
-import { loadVisualReasoningTest } from "../../../state/actions/visual-reasoning.action";
-import { map, Observable } from "rxjs";
-import { VisualReasoning } from "../../../entities/barrett/visual-reasoning.model";
-import { selectVisualReasoningSubTest } from "../../../state/selectors/visual-reasoning.selector";
+import { createVisualReasoningTest, getVisualReasoningTest } from "../../../state/actions/visual-reasoning.action";
+import { map, Observable, take } from "rxjs";
+import { VisualReasoning, VisualReasoningTestType } from "../../../entities/barrett/visual-reasoning.model";
+import {
+  selectVisualReasoningLoading,
+  selectVisualReasoningSubTest
+} from "../../../state/selectors/visual-reasoning.selector";
+import { selectBarrettTest } from "../../../state/selectors/barrett.selector";
 
 @Component({
   selector: 'app-visual-reasoning',
@@ -15,20 +19,28 @@ import { selectVisualReasoningSubTest } from "../../../state/selectors/visual-re
 })
 export class VisualReasoningComponent implements OnInit {
 
-  id: string;
+  barretTestId: number;
   subtest$: Observable<VisualReasoning>;
+  loading$: Observable<boolean>;
+  VisualReasoningTestType = VisualReasoningTestType;
 
   constructor(private route: ActivatedRoute,
               private visualReasoningService: VisualReasoningService,
               private store: Store<AppState>) {
-    this.id = route.snapshot.paramMap.get("id") as string;
-    store.dispatch(loadVisualReasoningTest({testId: this.id}));
+    this.barretTestId = Number(route.snapshot.paramMap.get("id") as string);
     this.subtest$ = store.select(selectVisualReasoningSubTest).pipe(
       map(visualReasoning => visualReasoning as VisualReasoning)
     );
+    this.loading$ = store.select(selectVisualReasoningLoading);
   }
 
   ngOnInit(): void {
+    this.store.select(selectBarrettTest).pipe(take(1)).subscribe(s => {
+      if (s.tests.find(test => test.id == this.barretTestId)?.visualReasoningSubtest.createdDate === null)
+        this.store.dispatch(createVisualReasoningTest({barrettTestId: this.barretTestId}))
+      else
+        this.store.dispatch(getVisualReasoningTest({barrettTestId: this.barretTestId}));
+    });
   }
 
 }

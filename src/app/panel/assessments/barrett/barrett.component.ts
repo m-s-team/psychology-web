@@ -5,9 +5,9 @@ import { AppState } from "../../../state/states";
 import { Observable } from "rxjs";
 import { selectBarrettTests, selectSelectedBarrettTest } from "../../../state/selectors/barrett.selector";
 import {
-    createBarrettTest,
-    deleteSelectedBarrettTest,
-    setSelectedBarrettTestIndex
+  createBarrettTest,
+  deleteSelectedBarrettTest,
+  setSelectedBarrettTestIndex
 } from "../../../state/actions/barrett.action";
 
 @Component({

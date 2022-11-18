@@ -11,11 +11,16 @@ export class VisualReasoning {
 class Test {
   constructor(
     public id: number,
-    public type: string,
+    public type: VisualReasoningTestType,
     public question: string,
     public imageUrl: string,
     public optionImageUrls: string[],
     public userAnswer: number
   ) {
   }
+}
+
+export enum VisualReasoningTestType {
+  Odd = "Odd",
+  Nest = "Next"
 }

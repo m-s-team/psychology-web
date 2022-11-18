@@ -15,17 +15,17 @@ export class VisualReasoningService {
   constructor(private http: HttpClient) {
   }
 
-  getUrl(id: string): string {
-    return this.resourceUrl.replace(":id", id);
+  getUrl(id: number): string {
+    return this.resourceUrl.replace(":id", id.toString());
   }
 
-  getByTestId(testId: string): Observable<HttpResponse<VisualReasoning>> {
-    const url = this.getUrl(testId);
+  getByTestId(barrettTestId: number): Observable<HttpResponse<VisualReasoning>> {
+    const url = this.getUrl(barrettTestId);
     return this.http.get<VisualReasoning>(url, {observe: 'response'});
   }
 
-  createByTestId(testId: string): Observable<HttpResponse<VisualReasoning>> {
-    const url = this.getUrl(testId);
+  createByTestId(barrettTestId: number): Observable<HttpResponse<VisualReasoning>> {
+    const url = this.getUrl(barrettTestId);
     return this.http.post<VisualReasoning>(url, {},{observe: 'response'});
   }
 

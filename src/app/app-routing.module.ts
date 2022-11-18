@@ -31,7 +31,7 @@ const routes: Routes = [
   },
   {
     path: 'md', component: MdComponent, children: [
-      {path: 'barrett/:id/vr', component: VisualReasoningComponent}
+      {path: 'barrett/:id/visual-reasoning', component: VisualReasoningComponent}
     ]
   },
   {path: 'home', component: HomeComponent},
