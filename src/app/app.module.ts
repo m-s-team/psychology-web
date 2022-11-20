@@ -11,7 +11,6 @@ import { AppRoutingModule } from "./app-routing.module";
 import { PortalComponent } from './panel/portal/portal.component';
 import { AuthHttpInterceptor, AuthModule } from "@auth0/auth0-angular";
 import { FormsModule } from "@angular/forms";
-import { WaisIvComponent } from './md/wais-iv/wais-iv.component';
 import { PanelComponent } from './panel/panel.component';
 import { MdComponent } from './md/md.component';
 import { STEPPER_GLOBAL_OPTIONS } from "@angular/cdk/stepper";
@@ -43,7 +42,6 @@ import { VisualReasoningEffect } from "./state/effects/visual-reasoning.effects"
     SidenavComponent,
     ToolbarComponent,
     PortalComponent,
-    WaisIvComponent,
     PanelComponent,
     MdComponent,
     VisualReasoningComponent,

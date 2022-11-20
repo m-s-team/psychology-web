@@ -1,48 +1,58 @@
+<mat-sidenav-container>
+  <mat-sidenav mode="side" opened>
+    <mat-spinner mode="determinate" value="93"></mat-spinner>
+  </mat-sidenav>
+  <mat-sidenav-content fxLayout="column">
+    <main>
+      <div class="body" fxLayout="column" *ngIf="!(loading$ | async)">
+        <ng-container *ngIf="subtest$ | async as subtest">
 
-<div class="body" fxLayout="column" *ngIf="!(loading$ | async)">
-  <ng-container *ngIf="subtest$ | async as subtest">
-
-    <div *ngFor="let test of subtest?.tests">
-      <ng-container *ngIf="test.type == VisualReasoningTestType.Odd; then odd else next"></ng-container>
-      <ng-template #odd>
-        <div [matBadge]="test.id + 1" matBadgePosition="before" matBadgeColor="accent" class="test" fxLayout="column"
-             fxLayoutAlign="start stretch">
-          <div class="question mat-elevation-z10" fxLayout="column" fxLayoutAlign="start center">
+          <div *ngFor="let test of subtest?.tests">
+            <ng-container *ngIf="test.type == VisualReasoningTestType.Odd; then odd else next"></ng-container>
+            <ng-template #odd>
+              <div [matBadge]="test.id + 1" matBadgePosition="before" matBadgeColor="accent" class="test"
+                   fxLayout="column"
+                   fxLayoutAlign="start stretch">
+                <div class="question mat-elevation-z10" fxLayout="column" fxLayoutAlign="start center">
             <span>
               {{ test.question }}
             </span>
-          </div>
+                </div>
 
-          <mat-button-toggle-group fxFlexAlign="center" name="fontStyle" aria-label="Font Style">
+                <mat-button-toggle-group fxFlexAlign="center" name="fontStyle" aria-label="Font Style" [value]="test.userAnswer">
 
-            <mat-button-toggle *ngFor="let option of test.optionImageUrls; index as i" [value]="i">
-              <img [src]="option">
-              <br> {{i}}
-            </mat-button-toggle>
+                  <mat-button-toggle *ngFor="let option of test.optionImageUrls; index as i" [value]="i + 1">
+                    <img [src]="option">
+                    <br> {{i + 1}}
+                  </mat-button-toggle>
 
-          </mat-button-toggle-group>
-        </div>
-      </ng-template>
-      <ng-template #next>
-        <div [matBadge]="test.id + 1" matBadgePosition="before" matBadgeColor="accent" class="test" fxLayout="column"
-             fxLayoutAlign="start stretch">
-          <div class="question mat-elevation-z10" fxLayout="column" fxLayoutAlign="start center">
+                </mat-button-toggle-group>
+              </div>
+            </ng-template>
+            <ng-template #next>
+              <div [matBadge]="test.id + 1" matBadgePosition="before" matBadgeColor="accent" class="test"
+                   fxLayout="column"
+                   fxLayoutAlign="start stretch">
+                <div class="question mat-elevation-z10" fxLayout="column" fxLayoutAlign="start center">
             <span>
               {{ test.question }}
             </span>
-            <img [src]="test.imageUrl">
+                  <img [src]="test.imageUrl">
+                </div>
+
+                <mat-button-toggle-group fxFlexAlign="center" name="fontStyle" aria-label="Font Style" [value]="test.userAnswer">
+
+                  <mat-button-toggle *ngFor="let option of test.optionImageUrls; index as i" [value]="i + 1">
+                    <img [src]="option">
+                    <br> {{i + 1}}
+                  </mat-button-toggle>
+
+                </mat-button-toggle-group>
+              </div>
+            </ng-template>
           </div>
-
-          <mat-button-toggle-group fxFlexAlign="center" name="fontStyle" aria-label="Font Style">
-
-            <mat-button-toggle *ngFor="let option of test.optionImageUrls; index as i" [value]="i">
-              <img [src]="option">
-              <br> {{i}}
-            </mat-button-toggle>
-
-          </mat-button-toggle-group>
-        </div>
-      </ng-template>
-    </div>
-  </ng-container>
-</div>
+        </ng-container>
+      </div>
+    </main>
+  </mat-sidenav-content>
+</mat-sidenav-container>
