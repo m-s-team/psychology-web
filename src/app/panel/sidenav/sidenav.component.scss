@@ -1,6 +1,9 @@
-.mat-list-item.active {
-  color: #fff;
+a.active {
   background-color: #673ab7;
+
+  mat-icon, .nav-caption {
+    color: #fff;
+  }
 }
 
 mat-nav-list {

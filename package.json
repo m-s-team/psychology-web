@@ -29,6 +29,7 @@
     "@ngrx/store-devtools": "^14.3.2",
     "echarts": "^5.4.0",
     "ngx-echarts": "^14.0.0",
+    "ngx-http-date-interceptor": "^15.0.0",
     "rxjs": "~7.5.0",
     "tslib": "^2.4.1",
     "zone.js": "^0.11.8"

@@ -36,6 +36,7 @@ import { BarrettEffect } from "./state/effects/barrett.effects";
 import { HomeComponent } from './home/home.component';
 import { VisualReasoningEffect } from "./state/effects/visual-reasoning.effects";
 import { ExamCpComponent } from './md/exam-cp/exam-cp.component';
+import { HttpDateInterceptorProvider } from 'ngx-http-date-interceptor';
 
 @NgModule({
   declarations: [
@@ -111,7 +112,8 @@ import { ExamCpComponent } from './md/exam-cp/exam-cp.component';
       provide: HTTP_INTERCEPTORS,
       useClass: AuthHttpInterceptor,
       multi: true
-    }
+    },
+    HttpDateInterceptorProvider
   ],
   bootstrap: [AppComponent]
 })

@@ -1,6 +1,6 @@
 <div class="mat-app-background fill" fxLayout="column">
   <div class="toolbar" fxLayout fxLayoutAlign="space-around center">
-    <mat-form-field appearance="standard">
+    <mat-form-field appearance="fill">
       <mat-label>لیست آزمون‌ها</mat-label>
       <mat-select #testSelect [value]="selectedTest$ | async" (selectionChange)="onTestChange(testSelect.value)">
         <mat-option *ngFor="let test of tests$ | async; index as i" [value]="i+1">{{ test.createdDate | date:'full' }}</mat-option>
