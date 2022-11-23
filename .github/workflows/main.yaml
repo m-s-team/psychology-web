@@ -15,7 +15,7 @@ jobs:
       - name: Install Angular CLI
         run: npm install -g @angular/cli
       - name: Clean And Install Packages
-        run: npm ci
+        run: npm ci --force
       - name: Build
         run:  ng build --output-path output --base-href /
       - name: Upload Static Pages
