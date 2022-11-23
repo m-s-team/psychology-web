@@ -28,7 +28,6 @@ ul {
 }
 
 ul li {
-  border: 1px solid #e0e0e0;
   color: dimgray;
   //background-color: #353535;
   margin: 6px;
@@ -36,14 +35,13 @@ ul li {
   display: flex;
   border-radius: 5px;
   align-items: center;
-  @include mat.elevation(2, #000000, 0.8);
+  //@include mat.elevation(0.5, #000000, 0.8);
   transition: all .5s;
 }
 
 ul li:hover {
-  border-color: #7b1fa2;
-  @include mat.elevation(6, #7b1fa2);
-  //background-color: #404040;
+  @include mat.elevation(1, #7b1fa2);
+  background-color: #e0e0e0;
 }
 
 ul strong {

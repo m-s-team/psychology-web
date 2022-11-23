@@ -35,6 +35,7 @@ import { StoreDevtoolsModule } from '@ngrx/store-devtools';
 import { BarrettEffect } from "./state/effects/barrett.effects";
 import { HomeComponent } from './home/home.component';
 import { VisualReasoningEffect } from "./state/effects/visual-reasoning.effects";
+import { ExamCpComponent } from './md/exam-cp/exam-cp.component';
 
 @NgModule({
   declarations: [
@@ -54,7 +55,8 @@ import { VisualReasoningEffect } from "./state/effects/visual-reasoning.effects"
     MbtiComponent,
     StrongComponent,
     CallbackComponent,
-    HomeComponent
+    HomeComponent,
+    ExamCpComponent
   ],
   imports: [
     BrowserModule,

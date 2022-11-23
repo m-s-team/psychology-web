@@ -6,13 +6,17 @@ mat-sidenav-container {
   min-width: 100%;
 }
 
+app-exam-cp {
+  height: 100%;
+}
+
 main {
   flex: 1 1 auto;
   overflow: auto;
 }
 
 mat-sidenav {
-  width: 250px;
+  width: 270px;
 }
 
 .fill {
@@ -32,7 +36,7 @@ img {
   max-width: 600px;
   border: 1px solid #e0e0e0;
   margin: 25px;
-  border-radius: 10px;
+  border-radius: 5px;
   background-color: #fafafa;
 }
 
@@ -47,7 +51,7 @@ img {
     max-width: 537px;
   }
 
-  border-radius: 10px;
+  border-radius: 5px;
   background-color: #f0f0f0;
   padding: 20px 10px;
 }
@@ -58,7 +62,7 @@ mat-button-toggle-group {
 
 mat-button-toggle {
   img {
-    filter: invert(0.01);
+    filter: invert(0.00);
     width: 100%;
   }
 }

@@ -1,0 +1,27 @@
+<div class="body" fxLayout="column" fxLayoutAlign="start center">
+  <div id="time">
+    <mat-progress-spinner mode="determinate" value="94"></mat-progress-spinner>
+    <span>
+      08:45
+    </span>
+  </div>
+
+  <div id="info">
+
+    {{ title }}
+
+    <ul>
+      <li>شناسه آزمون: <span>{{ id }}</span></li>
+      <li>نوع آزمون: <span>{{ type }}</span></li>
+      <li>تاریخ شروع آزمون: <span>{{ createdDate | date:"YYYY/MM/dd" }}</span></li>
+      <li>ساعت شروع آزمون: <span>{{ createdDate | date:"HH:mm:ss" }}</span></li>
+      <li>زمان آزمون: <span>{{ requiredTime }} دقیقه</span></li>
+      <li>تعداد سوالات: <span>{{ questionCount }}</span></li>
+      <li>سوالات پاسخ داده شده: <span>{{ answeredCount }}</span></li>
+    </ul>
+  </div>
+
+  <button id="subscribe" mat-flat-button fxFlexAlign="end" color="primary" routerLink="/panel/barrett">
+    ذخیره آزمون و خروج
+  </button>
+</div>

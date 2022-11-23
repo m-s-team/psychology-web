@@ -1,0 +1,55 @@
+@use '@angular/material' as mat;
+
+.body {
+  height: 100%;
+}
+
+#time {
+  margin: 30px 0;
+  position: relative;
+
+  span {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: larger;
+  }
+}
+
+#info {
+  margin: 5px;
+  flex: 1 1 auto;
+}
+
+ul {
+  list-style: none;
+  padding: 0;
+  margin: 15px 0;
+}
+
+ul li {
+  color: gray;
+  padding: 7px;
+  font-size: small;
+}
+
+ul li span {
+  //background-color: #e0e0e0;
+  color: royalblue;
+  border: 1px solid royalblue;
+  margin: 0 10px;
+  padding: 1px 4px;
+  border-radius: 5px;
+  transition: all .5s;
+}
+
+ul li span:hover {
+  @include mat.elevation(2, #000);
+  background-color: royalblue;
+  color: white;
+}
+
+#subscribe {
+  margin: 20px;
+}

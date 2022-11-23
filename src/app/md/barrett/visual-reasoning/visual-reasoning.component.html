@@ -1,11 +1,16 @@
-<mat-sidenav-container>
-  <mat-sidenav mode="side" opened>
-    <mat-spinner mode="determinate" value="93"></mat-spinner>
-  </mat-sidenav>
-  <mat-sidenav-content fxLayout="column">
-    <main>
-      <div class="body" fxLayout="column" *ngIf="!(loading$ | async)">
-        <ng-container *ngIf="subtest$ | async as subtest">
+<ng-container *ngIf="subtest$ | async as subtest">
+  <mat-sidenav-container>
+    <mat-sidenav mode="side" opened>
+      <app-exam-cp title="تست جیمز برت - خرده آزمون استدلال تصویری"
+                   [id]="barretTestId"
+                   type="تستی"
+                   [requiredTime]="subtest.requiredTime"
+                   [questionCount]="subtest.tests.length"
+      ></app-exam-cp>
+    </mat-sidenav>
+    <mat-sidenav-content fxLayout="column">
+      <main>
+        <div class="body" fxLayout="column" *ngIf="!(loading$ | async)">
 
           <div *ngFor="let test of subtest?.tests">
             <ng-container *ngIf="test.type == VisualReasoningTestType.Odd; then odd else next"></ng-container>
@@ -13,13 +18,14 @@
               <div [matBadge]="test.id + 1" matBadgePosition="before" matBadgeColor="accent" class="test"
                    fxLayout="column"
                    fxLayoutAlign="start stretch">
-                <div class="question mat-elevation-z10" fxLayout="column" fxLayoutAlign="start center">
+                <div class="question mat-elevation-z1" fxLayout="column" fxLayoutAlign="start center">
             <span>
               {{ test.question }}
             </span>
                 </div>
 
-                <mat-button-toggle-group fxFlexAlign="center" name="fontStyle" aria-label="Font Style" [value]="test.userAnswer">
+                <mat-button-toggle-group fxFlexAlign="center" name="fontStyle" aria-label="Font Style"
+                                         [value]="test.userAnswer">
 
                   <mat-button-toggle *ngFor="let option of test.optionImageUrls; index as i" [value]="i + 1">
                     <img [src]="option">
@@ -33,14 +39,15 @@
               <div [matBadge]="test.id + 1" matBadgePosition="before" matBadgeColor="accent" class="test"
                    fxLayout="column"
                    fxLayoutAlign="start stretch">
-                <div class="question mat-elevation-z10" fxLayout="column" fxLayoutAlign="start center">
+                <div class="question mat-elevation-z1" fxLayout="column" fxLayoutAlign="start center">
             <span>
               {{ test.question }}
             </span>
                   <img [src]="test.imageUrl">
                 </div>
 
-                <mat-button-toggle-group fxFlexAlign="center" name="fontStyle" aria-label="Font Style" [value]="test.userAnswer">
+                <mat-button-toggle-group fxFlexAlign="center" name="fontStyle" aria-label="Font Style"
+                                         [value]="test.userAnswer">
 
                   <mat-button-toggle *ngFor="let option of test.optionImageUrls; index as i" [value]="i + 1">
                     <img [src]="option">
@@ -51,8 +58,8 @@
               </div>
             </ng-template>
           </div>
-        </ng-container>
-      </div>
-    </main>
-  </mat-sidenav-content>
-</mat-sidenav-container>
+        </div>
+      </main>
+    </mat-sidenav-content>
+  </mat-sidenav-container>
+</ng-container>
