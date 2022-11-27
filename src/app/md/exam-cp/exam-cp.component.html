@@ -1,8 +1,8 @@
 <div class="body" fxLayout="column" fxLayoutAlign="start center">
   <div id="time">
-    <mat-progress-spinner mode="determinate" value="94"></mat-progress-spinner>
+    <mat-progress-spinner mode="determinate" [value]="remainPercentage$ | async"></mat-progress-spinner>
     <span>
-      08:45
+      {{ remainTime$ | async | date:"mm:ss" }}
     </span>
   </div>
 
