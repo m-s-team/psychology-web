@@ -3,6 +3,7 @@ import { ConstantsService } from "../../config/constants-service";
 import { VisualReasoning } from "../../entities/barrett/visual-reasoning.model";
 import { HttpClient, HttpResponse } from "@angular/common/http";
 import { Observable } from "rxjs";
+import { VisualAnswer } from "../../entities/barrett/visual-answer.model";
 
 @Injectable({
   providedIn: 'root'
@@ -29,4 +30,8 @@ export class VisualReasoningService {
     return this.http.post<VisualReasoning>(url, {},{observe: 'response'});
   }
 
+  updateAnswers(barrettTestId: number, answers: VisualAnswer[]): Observable<HttpResponse<VisualReasoning>> {
+    const url = this.getUrl(barrettTestId);
+    return this.http.put<VisualReasoning>(url, answers,{observe: 'response'});
+  }
 }
